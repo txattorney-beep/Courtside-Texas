@@ -1,0 +1,15 @@
+name: Notify search engines
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/submit_indexnow.py', '.github/workflows/search-engines.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify published key and submit sitemap
+        run: python3 scripts/submit_indexnow.py
