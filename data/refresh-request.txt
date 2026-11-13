@@ -1,1 +1,1 @@
-Run an end-to-end official-source refresh after initial publication. Requested 2026-11-13.
+Verify complete unattended refresh and search-engine notification after IndexNow ownership validation. Requested 2026-11-13.
