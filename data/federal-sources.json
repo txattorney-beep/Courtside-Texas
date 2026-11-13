@@ -1,0 +1,464 @@
+{
+  "checkedAt": "2026-11-13",
+  "courts": [
+    {
+      "id": "txnd",
+      "name": "U.S. District Court, Northern District of Texas",
+      "shortName": "N.D. Texas",
+      "kind": "Federal district",
+      "website": "https://www.txnd.uscourts.gov/",
+      "rulesPage": "https://www.txnd.uscourts.gov/rules-and-orders",
+      "docketUrl": "https://ecf.txnd.uscourts.gov/cgi-bin/ShowIndex.pl",
+      "divisions": [
+        "Abilene",
+        "Amarillo",
+        "Dallas",
+        "Fort Worth",
+        "Lubbock",
+        "San Angelo",
+        "Wichita Falls"
+      ],
+      "directorySource": "https://www.txnd.uscourts.gov/directory/court",
+      "directCheckNote": "Homepage and rule PDF returned HTTP 404 during initial crawl; court-published current PDF text recovered from web index.",
+      "docketAccess": "PACER account required; fees may apply.",
+      "docketMode": "official-portal",
+      "verifiedDate": "2026-11-13"
+    },
+    {
+      "id": "txed",
+      "name": "U.S. District Court, Eastern District of Texas",
+      "shortName": "E.D. Texas",
+      "kind": "Federal district",
+      "website": "https://www.txed.uscourts.gov/",
+      "rulesPage": "https://www.txed.uscourts.gov/?q=rules-and-orders",
+      "docketUrl": "https://ecf.txed.uscourts.gov/cgi-bin/ShowIndex.pl",
+      "divisions": [
+        "Beaumont",
+        "Lufkin",
+        "Marshall",
+        "Sherman",
+        "Texarkana",
+        "Tyler"
+      ],
+      "directorySource": "https://www.txed.uscourts.gov/",
+      "docketAccess": "PACER account required; fees may apply.",
+      "docketMode": "official-portal",
+      "verifiedDate": "2026-11-13"
+    },
+    {
+      "id": "txsd",
+      "name": "U.S. District Court, Southern District of Texas",
+      "shortName": "S.D. Texas",
+      "kind": "Federal district",
+      "website": "https://www.txs.uscourts.gov/",
+      "rulesPage": "https://www.txs.uscourts.gov/page/local-federal-rules",
+      "docketUrl": "https://ecf.txsd.uscourts.gov/cgi-bin/ShowIndex.pl",
+      "divisions": [
+        "Brownsville",
+        "Corpus Christi",
+        "Galveston",
+        "Houston",
+        "Laredo",
+        "McAllen",
+        "Victoria"
+      ],
+      "directorySource": "https://www.txs.uscourts.gov/",
+      "directCheckNote": "Current district rules PDF returned HTTP 404 during initial direct crawl; court-published PDF text recovered from web index.",
+      "docketAccess": "PACER account required; fees may apply.",
+      "docketMode": "official-portal",
+      "verifiedDate": "2026-11-13"
+    },
+    {
+      "id": "txwd",
+      "name": "U.S. District Court, Western District of Texas",
+      "shortName": "W.D. Texas",
+      "kind": "Federal district",
+      "website": "https://www.txwd.uscourts.gov/",
+      "rulesPage": "https://www.txwd.uscourts.gov/court-information/lcr-introduction/",
+      "docketUrl": "https://ecf.txwd.uscourts.gov/cgi-bin/login.pl",
+      "divisions": [
+        "Austin",
+        "Del Rio",
+        "El Paso",
+        "Midland/Odessa",
+        "Pecos",
+        "San Antonio",
+        "Waco"
+      ],
+      "directorySource": "https://www.txwd.uscourts.gov/court-information/lcr-introduction/",
+      "docketAccess": "PACER account required; fees may apply.",
+      "docketMode": "official-portal",
+      "verifiedDate": "2026-11-13"
+    },
+    {
+      "id": "ca5",
+      "name": "U.S. Court of Appeals for the Fifth Circuit",
+      "shortName": "Fifth Circuit",
+      "kind": "Federal appellate",
+      "website": "https://www.ca5.uscourts.gov/",
+      "rulesPage": "https://www.ca5.uscourts.gov/rules-procedures",
+      "docketUrl": "https://ecf.ca5.uscourts.gov/",
+      "divisions": [],
+      "coverage": [
+        "Texas",
+        "Louisiana",
+        "Mississippi"
+      ],
+      "directorySource": "https://www.ca5.uscourts.gov/",
+      "docketAccess": "PACER account required; fees may apply.",
+      "docketMode": "official-portal",
+      "verifiedDate": "2026-11-13"
+    }
+  ],
+  "rules": [
+    {
+      "id": "txnd-local-civil",
+      "title": "Northern District of Texas Local Civil Rules",
+      "url": "https://www.txnd.uscourts.gov/sites/default/files/documents/CIVRULES.pdf",
+      "sourcePage": "https://www.txnd.uscourts.gov/rules-and-orders",
+      "courtIds": [
+        "txnd"
+      ],
+      "group": "local",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Effective September 1, 2026",
+      "textPath": "data/seed-texts/txnd-local-civil.txt",
+      "retrieval": "indexed-source-text",
+      "note": "Complete 958-line court PDF extraction obtained through search index. Direct source returned 404; index crawl says last month. Do not label as a successful live PDF download.",
+      "sha256": "941e45a3c004b5860a382cab5ececc5875594376fd443d58fef2a978c04b3871",
+      "textBytes": 83103,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "txnd-local-criminal",
+      "title": "Northern District of Texas Local Criminal Rules",
+      "url": "https://www.txnd.uscourts.gov/sites/default/files/documents/CRIMRULES.pdf",
+      "sourcePage": "https://www.txnd.uscourts.gov/rules-and-orders",
+      "courtIds": [
+        "txnd"
+      ],
+      "group": "local",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Effective September 1, 2026",
+      "textPath": "data/seed-texts/txnd-local-criminal.txt",
+      "retrieval": "indexed-source-text",
+      "note": "Complete 538-line court PDF extraction obtained through search index. Direct source returned 404; index crawl says last month.",
+      "sha256": "6124756c865fd12bd68747baf802a85b60972ba72e377829f981e652430f33b2",
+      "textBytes": 48857,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "txed-local",
+      "title": "Eastern District of Texas Local Rules",
+      "url": "https://www.txed.uscourts.gov/?q=node/14056/attachment/newest",
+      "sourcePage": "https://www.txed.uscourts.gov/?q=rules-and-orders",
+      "courtIds": [
+        "txed"
+      ],
+      "group": "local",
+      "checkedAt": "2026-11-13",
+      "versionNote": "As amended February 9, 2026",
+      "textPath": "data/seed-texts/txed-local.txt",
+      "retrieval": "direct-pdf",
+      "note": "Download target is stable newest attachment. Recheck general orders for subsequent amendments and effective dates; do not assume the landing page heading date controls.",
+      "sha256": "32f092439a7535a7101728bf7061b9a972dc26e9a869159cb9cfbd041dbf9332",
+      "textBytes": 182802,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "txsd-local",
+      "title": "Southern District of Texas Local Rules",
+      "url": "https://www.txs.uscourts.gov/sites/txs/files/LR_March_2026.pdf",
+      "sourcePage": "https://www.txs.uscourts.gov/page/local-federal-rules",
+      "courtIds": [
+        "txsd"
+      ],
+      "group": "local",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Reprinted March 2026; amendments through March 27, 2026",
+      "textPath": "data/seed-texts/txsd-local.txt",
+      "retrieval": "indexed-source-text",
+      "note": "Complete 1,248-line court PDF extraction obtained through web tool. Direct download returned 404.",
+      "sha256": "7198e003eb94669559d510808c7bd466fdbb85ad9ebc7eee6f20135a8375612a",
+      "textBytes": 78335,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "txsd-patent",
+      "title": "Southern District of Texas Patent Rules",
+      "url": "https://www.txs.uscourts.gov/sites/txs/files/rules.pdf",
+      "sourcePage": "https://www.txs.uscourts.gov/page/district-local-rules-practice-patent-cases",
+      "courtIds": [
+        "txsd"
+      ],
+      "group": "local",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Amended April 18, 2022",
+      "textPath": "data/seed-texts/txsd-patent.txt",
+      "retrieval": "direct-pdf",
+      "note": null,
+      "sha256": "288013402d0f30682bd2567dc0c6db668ce09bf34aa477926f34013d032418d9",
+      "textBytes": 35478,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "txwd-local",
+      "title": "Western District of Texas Local Court Rules",
+      "url": "https://www.txwd.uscourts.gov/wp-content/uploads/2026/10/TXWD-Local-Rules-Full-Copy-081926.pdf",
+      "sourcePage": "https://www.txwd.uscourts.gov/court-information/lcr-introduction/",
+      "courtIds": [
+        "txwd"
+      ],
+      "group": "local",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Current linked compilation; cover effective April 26, 2023",
+      "textPath": "data/seed-texts/txwd-local.txt",
+      "retrieval": "direct-pdf",
+      "note": "Filename includes 081926. Do not treat filename as effective date for every rule; individual rules and amendments have different effective dates.",
+      "sha256": "51af4ff7a502bf528d3d5a37491cb8424747bbc71addfedc74956d0ca00e65ca",
+      "textBytes": 554857,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "ca5-local",
+      "title": "Fifth Circuit Rules and Internal Operating Procedures",
+      "url": "https://www.ca5.uscourts.gov/docs/b0d14584-2d9a-43bd-8ceb-dc3644ba323f/5thcir-iop",
+      "sourcePage": "https://www.ca5.uscourts.gov/rules-procedures",
+      "courtIds": [
+        "ca5"
+      ],
+      "group": "local",
+      "checkedAt": "2026-11-13",
+      "versionNote": null,
+      "textPath": "data/seed-texts/ca5-local.txt",
+      "retrieval": "direct-pdf",
+      "note": null,
+      "sha256": "b8c49f07b51677e512f3933ac1830b28120a6e9ab49144d636c2140255980332",
+      "textBytes": 163416,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "ca5-combined",
+      "title": "Federal Rules of Appellate Procedure with Fifth Circuit Rules and IOPs",
+      "url": "https://www.ca5.uscourts.gov/docs/C9B3642D-BBBF-4D20-859C-C5B0875D75E8/federalrulesofappellateprocedure",
+      "sourcePage": "https://www.ca5.uscourts.gov/rules-procedures",
+      "courtIds": [
+        "ca5"
+      ],
+      "group": "local",
+      "checkedAt": "2026-11-13",
+      "versionNote": null,
+      "textPath": "data/seed-texts/ca5-combined.txt",
+      "retrieval": "direct-pdf",
+      "note": null,
+      "sha256": "5441b4b66e6740fea13ab9a5833ff14839668d569c37fbe012443bcfff35051b",
+      "textBytes": 372631,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "frcp",
+      "title": "Federal Rules of Civil Procedure",
+      "url": "https://www.uscourts.gov/sites/default/files/document/federal-rules-of-civil-procedure.pdf",
+      "sourcePage": "https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-civil-procedure",
+      "courtIds": [],
+      "group": "federal-practice",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Official current compilation dated December 1, 2025",
+      "textPath": "data/seed-texts/frcp.txt",
+      "retrieval": "direct-pdf",
+      "note": null,
+      "sha256": "0f915eb44bdb7740d32db842f37cc48faf2bc824b683b1117e126c8db58809c0",
+      "textBytes": 428240,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "frap",
+      "title": "Federal Rules of Appellate Procedure",
+      "url": "https://www.uscourts.gov/sites/default/files/document/federal-rules-of-appellate-procedure.pdf",
+      "sourcePage": "https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-appellate-procedure",
+      "courtIds": [],
+      "group": "federal-practice",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Official current compilation dated December 1, 2025",
+      "textPath": "data/seed-texts/frap.txt",
+      "retrieval": "direct-pdf",
+      "note": null,
+      "sha256": "fc50cb4b460825c3015394cae31196268c2dbf563dfc24b11b84e7a5aac2b03f",
+      "textBytes": 232047,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "fre",
+      "title": "Federal Rules of Evidence",
+      "url": "https://www.uscourts.gov/sites/default/files/document/federal-rules-of-evidence.pdf",
+      "sourcePage": "https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-evidence",
+      "courtIds": [],
+      "group": "federal-practice",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Official current compilation dated December 1, 2025",
+      "textPath": "data/seed-texts/fre.txt",
+      "retrieval": "direct-pdf",
+      "note": null,
+      "sha256": "2d06d8dfc17f7fc96f500b92318681154cc73d96297b7971a4bb5c21d2fcde8c",
+      "textBytes": 118604,
+      "retrievedAt": "2026-11-13"
+    },
+    {
+      "id": "trcp",
+      "title": "Texas Rules of Civil Procedure",
+      "url": "https://www.txcourts.gov/media/1463426/texas-rules-of-civil-procedure.pdf",
+      "sourcePage": "https://www.txcourts.gov/rules-forms/",
+      "courtIds": [],
+      "group": "texas-practice",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Last amended October 1, 2026",
+      "textPath": null,
+      "retrieval": "link-only",
+      "note": "Canonical link verified against Texas Supreme Court rules page. Direct download blocked with HTTP 403 in this environment; links work through web retrieval."
+    },
+    {
+      "id": "trap",
+      "title": "Texas Rules of Appellate Procedure",
+      "url": "https://www.txcourts.gov/media/1463134/texas-rules-of-appellate-procedure-02062026.pdf",
+      "sourcePage": "https://www.txcourts.gov/rules-forms/",
+      "courtIds": [],
+      "group": "texas-practice",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Last amended February 6, 2026",
+      "textPath": null,
+      "retrieval": "link-only",
+      "note": "Canonical link verified against Texas Supreme Court rules page. Direct download blocked with HTTP 403 in this environment; links work through web retrieval."
+    },
+    {
+      "id": "tre",
+      "title": "Texas Rules of Evidence",
+      "url": "https://www.txcourts.gov/media/1463074/texas-rules-of-evidence-updated-with-amendments-effective-07022026.pdf",
+      "sourcePage": "https://www.txcourts.gov/rules-forms/",
+      "courtIds": [],
+      "group": "texas-practice",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Last amended July 2, 2026",
+      "textPath": null,
+      "retrieval": "link-only",
+      "note": "Canonical link verified against Texas Supreme Court rules page. Direct download blocked with HTTP 403 in this environment; links work through web retrieval."
+    },
+    {
+      "id": "trja",
+      "title": "Texas Rules of Judicial Administration",
+      "url": "https://www.txcourts.gov/media/1462861/texas-rules-of-judicial-administration-07012026.pdf",
+      "sourcePage": "https://www.txcourts.gov/rules-forms/",
+      "courtIds": [],
+      "group": "texas-practice",
+      "checkedAt": "2026-11-13",
+      "versionNote": "Last amended July 1, 2026",
+      "textPath": null,
+      "retrieval": "link-only",
+      "note": "Canonical link verified against Texas Supreme Court rules page. Direct download blocked with HTTP 403 in this environment; links work through web retrieval."
+    }
+  ],
+  "administrativeCode": {
+    "title": "Texas Administrative Code",
+    "website": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC",
+    "searchUrl": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=SEARCH_TAC",
+    "sourcePage": "https://www.sos.texas.gov/tac/index.shtml",
+    "linkVerificationSource": "https://www.tdi.texas.gov/commissioner/code.html",
+    "secondaryOfficialVerification": "https://guides.sll.texas.gov/historical-administrative-rules-regulations",
+    "retrieval": "official-portal-links",
+    "note": "Official current code is a JavaScript Appian portal. HTML fetch contains no substantive rule text. Full TAC content was not scraped. Individual title query links follow the observed title= query format; corpus-wide text search opens official SEARCH_TAC. Do not claim local full-text indexing.",
+    "titles": [
+      {
+        "titleNumber": 1,
+        "name": "Administration",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=1"
+      },
+      {
+        "titleNumber": 4,
+        "name": "Agriculture",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=4"
+      },
+      {
+        "titleNumber": 7,
+        "name": "Banking and Securities",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=7"
+      },
+      {
+        "titleNumber": 10,
+        "name": "Community Development",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=10"
+      },
+      {
+        "titleNumber": 13,
+        "name": "Cultural Resources",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=13"
+      },
+      {
+        "titleNumber": 16,
+        "name": "Economic Regulation",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=16"
+      },
+      {
+        "titleNumber": 19,
+        "name": "Education",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=19"
+      },
+      {
+        "titleNumber": 22,
+        "name": "Examining Boards",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=22"
+      },
+      {
+        "titleNumber": 25,
+        "name": "Health Services",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=25"
+      },
+      {
+        "titleNumber": 26,
+        "name": "Health and Human Services",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=26"
+      },
+      {
+        "titleNumber": 28,
+        "name": "Insurance",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=28"
+      },
+      {
+        "titleNumber": 30,
+        "name": "Environmental Quality",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=30"
+      },
+      {
+        "titleNumber": 31,
+        "name": "Natural Resources and Conservation",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=31"
+      },
+      {
+        "titleNumber": 34,
+        "name": "Public Finance",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=34"
+      },
+      {
+        "titleNumber": 37,
+        "name": "Public Safety and Corrections",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=37"
+      },
+      {
+        "titleNumber": 40,
+        "name": "Social Services and Assistance",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=40"
+      },
+      {
+        "titleNumber": 43,
+        "name": "Transportation",
+        "url": "https://texas-sos.appianportalsgov.com/rules-and-meetings?interface=VIEW_TAC&title=43"
+      }
+    ]
+  },
+  "weeklyCrawlGuidance": [
+    "Fetch each sourcePage and follow its current document link, rather than permanently pinning dated PDFs.",
+    "Extract with pdftotext; if no text, OCR and mark OCR confidence. Keep original URL, hash, success timestamp, source version, and retrieval status.",
+    "Do not clear the last valid rules corpus when a source errors. Preserve earlier indexed text and display its last success date and the latest failure.",
+    "Diff changed hashes and archive replaced versions, distinguishing proposed amendments from operative rule text.",
+    "Local district rules do not exhaust judge-specific standing orders, divisional orders, or general orders. Those require additional crawler coverage.",
+    "Dockets use official portals with authentication/fees; no evidence of a single free public full-docket API. Do not present portal routing as in-app docket search results."
+  ]
+}

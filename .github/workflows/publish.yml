@@ -1,0 +1,32 @@
+name: Validate and publish site
+on:
+  push:
+    branches: [main]
+    paths: ['public/**', 'scripts/build.py', 'scripts/validate.py', '.github/workflows/publish.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: courtside-main-workflows
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and check
+        run: |
+          node --check public/app.js
+          python3 scripts/build.py
+          python3 scripts/validate.py
+      - name: Publish static output
+        run: |
+          rm -rf site
+          cp -a dist site
+          git config user.name 'Courtside Texas publishing'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Courtside Texas"
+            git push
+          fi

@@ -1,0 +1,17 @@
+work/
+dist/
+node_modules/
+__pycache__/
+*.pyc
+.env*
+.dev.vars*
+.openai/
+.sites-runtime/
+data/seed-texts/
+data/state-courts.json
+data/state-summary.json
+data/rules-documents.json
+data/administrative.json
+data/documents.json
+data/local-documents*.json
+data/court-rule-associations.json

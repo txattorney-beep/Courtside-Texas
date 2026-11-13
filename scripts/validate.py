@@ -1,0 +1,22 @@
+import pathlib,json,gzip,xml.etree.ElementTree as ET,re
+ROOT=pathlib.Path(__file__).resolve().parents[1];p=ROOT/'dist';c=json.loads(gzip.decompress((p/'data'/'catalog.json.gz').read_bytes()));courts=c['courts'];docs=c['documents'];ids={x['id'] for x in courts};dids={x['id'] for x in docs}
+assert len(ids)==len(courts)>=541
+assert len([x for x in courts if x['level']=='State district'])>=519
+assert len([x for x in courts if x['level']=='State appellate'])==17
+assert len({n for x in courts for n in x['counties']})==254
+assert all(x.get('docket',{}).get('url','').startswith(('https://','http://')) for x in courts)
+assert len(c['admin']['titles'])>=17 and len(c['admin']['agencies'])>=100
+assert len(docs)==len(dids)>=1400
+texts={}
+for f in c['status']['textShards']:
+ for d in json.loads(gzip.decompress((p/f.lstrip('/')).read_bytes())):assert d['id'] in dids;texts[d['id']]=d['text']
+assert len(texts)>600
+assert 'summary judgment' in texts['txnd-local-civil'].lower()
+for court in courts:
+ assert (p/'courts'/court['id']/'index.html').exists()
+ for doc in court.get('ruleDocumentIds',[]):assert ('oca-'+str(doc)) in dids
+s=ET.parse(p/'sitemap.xml');urls=[x.text for x in s.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')];assert len(urls)>=547 and len(urls)==len(set(urls))
+assert 'Sitemap: https://courtsidetexas.com/sitemap.xml' in (p/'robots.txt').read_text()
+assert 'noindex' not in (p/'index.html').read_text()
+assert all((p/x).exists() for x in ['app.js','styles.css','offline-template.html','brand-mark.svg','favicon.svg','indexnow-key.txt'])
+print(json.dumps({'passed':True,'courts':len(courts),'documents':len(docs),'searchable':len(texts),'sitemapPages':len(urls)}))
