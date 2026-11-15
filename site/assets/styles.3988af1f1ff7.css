@@ -10,3 +10,6 @@
 .reference-nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 .news-shortcut{gap:6px}.news-shortcut .ico{width:13px;height:13px}
+
+.search-scope{font-size:12px;color:#65705e;margin:10px 0 8px}.searchbar input[type=hidden]{display:none}.searchbar input[type=search]{min-width:0}.details h1{overflow-wrap:anywhere}
+@media(max-width:600px){.details h1{font-size:34px!important}}
