@@ -9,6 +9,7 @@ function normalize(value){return String(value||'').toLowerCase().replace(/\b5th\
 function tokens(query){return [...new Set((normalize(query).match(/[\p{L}\p{N}]+/gu)||[]).filter(t=>!stop.has(t)))].slice(0,20);}
 function pattern(term){return new RegExp('\\b'+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+(term.endsWith('s')?'':'s?')+'\\b','i');}
 function prepare(records){return records.map(r=>({...r,_title:normalize(r.title),_meta:normalize((r.detail||'')+' '+(r.keywords||'')),_body:normalize(r.body)}));}
+function matchingCourtIds(courts,query){const records=prepare(courts.map(c=>({id:c.id,kind:'courts',title:c.name,detail:[c.shortName,c.level,c.judge,...(c.aliases||[]),...(c.cities||[]),...(c.counties||[])].filter(Boolean).join(' ')})));return new Set(run(records,query,'courts').groups.flatMap(g=>g.items.map(r=>r.id)));}
 function attachTexts(records,texts){const byId=new Map(texts.map(t=>[t.id,t.text]));for(const r of records){if(byId.has(r.id)){r.body=byId.get(r.id);r._body=normalize(r.body);r.fullText=true;}}}
 function excerpt(text,terms,length=310){text=String(text||'').replace(/\s+/g,' ').trim();const matches=terms.map(t=>text.search(pattern(t))).filter(i=>i>=0);const phrase=normalize(text).indexOf(terms.join(' '));const start=Math.max(0,(phrase>=0?phrase:matches.length?Math.min(...matches):0)-80);return (start?'…':'')+text.slice(start,start+length)+(start+length<text.length?'…':'');}
 function highlight(text,query){const ts=tokens(query);const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));if(!ts.length)return escape(text);const rx=new RegExp('\\b('+ts.sort((a,b)=>b.length-a.length).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+(t.endsWith('s')?'':'s?')).join('|')+')\\b','gi');let out='',last=0;String(text).replace(rx,(match,...args)=>{const at=args[args.length-2];out+=escape(String(text).slice(last,at))+'<mark>'+escape(match)+'</mark>';last=at+match.length;return match;});return out+escape(String(text).slice(last));}
@@ -31,7 +32,7 @@ function run(records,query,context='courts'){
  const result=order.map(kind=>({kind,label:groups[kind],items:[...hits.values()].filter(r=>r.kind===kind).sort((a,b)=>b.score-a.score||(kind==='news'?(b.date||'').localeCompare(a.date||''):0)||a.title.localeCompare(b.title,undefined,{numeric:true}))})).filter(g=>g.items.length);
  return {groups:result,total:hits.size,terms:ts};
 }
-const api={groups,contexts,tokens,prepare,attachTexts,run,highlight,excerpt};root.CourtsideSearch=api;if(typeof module!=='undefined')module.exports=api;
+const api={groups,contexts,tokens,prepare,matchingCourtIds,attachTexts,run,highlight,excerpt};root.CourtsideSearch=api;if(typeof module!=='undefined')module.exports=api;
 // Loading and full-text matching stay off the main thread, including on phones.
 if(typeof importScripts==='function'&&typeof document==='undefined'){
  let metadataPromise,textPromise,records,latest=0;
