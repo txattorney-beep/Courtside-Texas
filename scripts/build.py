@@ -1,4 +1,4 @@
-import pathlib,json,html,shutil,gzip,hashlib,datetime,xml.etree.ElementTree as ET
+import pathlib,json,html,shutil,gzip,hashlib,datetime,re,xml.etree.ElementTree as ET
 ROOT=pathlib.Path(__file__).resolve().parents[1];DIST=ROOT/'dist';ORIGIN='https://courtsidetexas.com';e=html.escape
 
 def build():
@@ -45,12 +45,32 @@ def build():
  from search_index import build_search_index
  build_search_index(ROOT,DIST,cat)
  urls.append('/news/')
- news_stamp=json.loads((ROOT/'public'/'data'/'news.json').read_text()).get('checkedAt',stamp)[:10]
- xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{ORIGIN+u}</loc><lastmod>{news_stamp if u=='/news/' else stamp}</lastmod></url>' for u in urls)+'</urlset>'
- (DIST/'sitemap.xml').write_text(xml);(DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nDisallow: /data/\nSitemap: '+ORIGIN+'/sitemap.xml\n');(DIST/'CNAME').write_text('courtsidetexas.com\n');(DIST/'.nojekyll').touch()
+ dates=sitemap_dates(urls,DIST,ROOT/'site')
+ xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{ORIGIN+u}</loc><lastmod>{dates[u]}</lastmod></url>' for u in urls)+'</urlset>'
+ # Catalog data and scripts must remain crawlable so engines can render the app.
+ # Internal search results carry noindex,follow in their HTML, not a crawl block.
+ (DIST/'sitemap.xml').write_text(xml);(DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+ORIGIN+'/sitemap.xml\n');(DIST/'CNAME').write_text('courtsidetexas.com\n');(DIST/'.nojekyll').touch()
  (DIST/'404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | Courtside Texas</title><link rel="stylesheet" href="/styles.css"><main class="main"><h1>Let’s get you to the right court.</h1><p>This page could not be found.</p><a class="primary" href="/">Search Courtside Texas</a></main></html>')
  version_assets(DIST)
  print(json.dumps({'pages':len(urls),'courts':len(cat['courts']),'sitemap':'dist/sitemap.xml'}))
+def sitemap_dates(urls,dist,previous):
+ """Keep lastmod stable until a page's content changes, not every build."""
+ old={}
+ if (previous/'sitemap.xml').exists():
+  ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+  for entry in ET.parse(previous/'sitemap.xml').findall('s:url',ns):
+   old[entry.findtext('s:loc',namespaces=ns)]=entry.findtext('s:lastmod',namespaces=ns)
+ today=datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+ def normalized(path):
+  return re.sub(r'/assets/([a-z-]+)\.[a-f0-9]{12}\.(js|css)',r'/\1.\2',path.read_text())
+ result={}
+ for url in urls:
+  relative=url.strip('/')+'/index.html' if url!='/' else 'index.html'
+  prior=previous/relative;last=old.get(ORIGIN+url)
+  unchanged=prior.exists() and normalized(dist/relative)==normalized(prior)
+  result[url]=last if unchanged and last else today
+ return result
+
 def version_assets(dist):
  built_at=datetime.datetime.now(datetime.timezone.utc).isoformat()
  files=['search-engine.js','search.js','search.css','app.js','bio.js','styles.css','news.js','news.css']

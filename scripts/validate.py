@@ -18,6 +18,28 @@ for court in courts:
 s=ET.parse(p/'sitemap.xml');urls=[x.text for x in s.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')];assert len(urls)>=547 and len(urls)==len(set(urls))
 assert 'Sitemap: https://courtsidetexas.com/sitemap.xml' in (p/'robots.txt').read_text()
 assert 'noindex' not in (p/'index.html').read_text()
+from html.parser import HTMLParser
+from urllib.robotparser import RobotFileParser
+from urllib.parse import urlparse
+class SearchMetadata(HTMLParser):
+ def __init__(self):super().__init__();self.canonical=[];self.description=[];self.robots=[];self.has_title=False
+ def handle_starttag(self,tag,attrs):
+  a=dict(attrs)
+  if tag=='title':self.has_title=True
+  if tag=='link' and a.get('rel')=='canonical':self.canonical.append(a.get('href'))
+  if tag=='meta' and a.get('name')=='description':self.description.append(a.get('content'))
+  if tag=='meta' and a.get('name')=='robots':self.robots.append(a.get('content',''))
+robots=RobotFileParser();robots.parse((p/'robots.txt').read_text().splitlines())
+for url in urls:
+ path=urlparse(url).path;file=p/(path.strip('/')+'/index.html' if path!='/' else 'index.html')
+ meta=SearchMetadata();meta.feed(file.read_text())
+ assert meta.canonical==[url] and meta.description and meta.description[0] and meta.has_title,url
+ assert not any('noindex' in value for value in meta.robots),url
+ for bot in ['Googlebot','Bingbot','DuckDuckBot','Applebot','YandexBot']:
+  assert robots.can_fetch(bot,url),url
+  assert robots.can_fetch(bot,'https://courtsidetexas.com/data/catalog.json.gz')
+assert 'https://courtsidetexas.com/search/' not in urls
+assert 'noindex,follow' in (p/'search/index.html').read_text()
 assert all((p/x).exists() for x in ['app.js','styles.css','offline-template.html','brand-mark.svg','favicon.svg','indexnow-key.txt'])
 news=json.loads((p/'data/news.json').read_text())
 articles=news['articles'];news_urls=[a['url'] for a in articles]

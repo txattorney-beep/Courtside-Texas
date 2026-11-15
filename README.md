@@ -44,7 +44,11 @@ The directory is an independent reference, not legal advice or an official court
 
 ## Search engines
 
-The generated sitemap lists individual court pages and reference indexes. IndexNow notifications are submitted through `scripts/submit_indexnow.py` after refresh; acceptance does not guarantee indexing. Google Search Console ownership verification and sitemap submission may require Eric's Google account. There is no ranking or indexing guarantee.
+The generated sitemap lists 553 canonical court and reference pages, with content-based modification dates. Public HTML, scripts, and catalog data remain crawlable; internal search results carry `noindex,follow`. Each indexed page has a title, description, canonical URL, and HTML content readable without JavaScript.
+
+`scripts/submit_indexnow.py` verifies the live ownership file and reads the live sitemap before notifying IndexNow participants. Every ordinary publication and weekly court/rule refresh submits the sitemap URLs; daily news refreshes notify only the news page. The workflow summary records HTTP receipt status and URL count. A receipt confirms submission, not indexing or ranking.
+
+Google Search Console has a verified domain property and a successfully processed sitemap. Preserve the existing Google verification TXT record in Cloudflare. Google discovers ongoing updates through `https://courtsidetexas.com/sitemap.xml`, also advertised in `robots.txt`. IndexNow submissions are shared among participating engines, including Bing. Yahoo and DuckDuckGo use Bing for some or all general results; they do not require duplicate submissions. Crawling and inclusion remain search-engine decisions.
 
 ## Legal news desk
 
