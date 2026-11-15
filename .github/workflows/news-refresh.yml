@@ -26,6 +26,7 @@ jobs:
           node --check public/news.js
           python3 scripts/build.py
           python3 scripts/validate.py
+          node --test tests/search.test.cjs
       - name: Publish news edition
         run: |
           rm -rf site

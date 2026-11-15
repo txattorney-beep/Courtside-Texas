@@ -33,6 +33,7 @@ jobs:
           node --check public/app.js
           python3 scripts/build.py
           python3 scripts/validate.py
+          node --test tests/search.test.cjs
       - name: Publish verified snapshot to GitHub
         run: |
           rm -rf site
