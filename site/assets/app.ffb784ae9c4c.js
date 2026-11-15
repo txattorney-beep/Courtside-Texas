@@ -5,10 +5,10 @@ const icons={search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/>
 const ico=n=>`<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${icons[n]||icons.book}</svg>`;
 const link=(url,label,cl='')=>`<a href="${esc(safeURL(url))}" target="_blank" rel="noopener" class="${cl}">${label}</a>`;
 const safeURL=u=>/^https?:\/\//.test(u||'')?u:'#';
-const date=s=>s?new Date(s).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'America/Chicago'}):'Not checked';
+const date=s=>s?new Date(/^\d{4}-\d{2}-\d{2}$/.test(s)?s+'T12:00:00Z':s).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'America/Chicago'}):'Not checked';
 let catalog={courts:[],documents:[],resources:[],admin:{titles:[],agencies:[]},status:{}},view='courts',query='',filter='all',county='',pageSize=15,saved=new Set(),textDocs=null,textLoading=null,ruleResults=[],ruleTotal=0,searchPending=false,searchGeneration=0,ruleType='all',installPrompt=null;
 try{saved=new Set(JSON.parse(localStorage.getItem('courtside-favorites-v1')||'[]').filter(x=>typeof x==='string'))}catch{}
-const APP_RELEASE='2583368f49df2c22';
+const APP_RELEASE='054c474ba3d51723';
 const routes={courts:'Court directory',news:'Legal news',local:'Local rules',practice:'Civil practice rules',admin:'Administrative rules',desk:'My Courts',about:'About Eric',sources:'Sources & updates'};
 const iconMap={courts:'court',news:'book',local:'book',practice:'book',admin:'agency',desk:'star',about:'user',sources:'refresh'};
 function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$('#toast').style.display='none',3500)}
