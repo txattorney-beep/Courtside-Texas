@@ -50,7 +50,7 @@ The generated sitemap lists individual court pages and reference indexes. IndexN
 
 `/news/` is a headline-first aggregator with three desktop columns and a single phone column. Original article links, publisher names and publication dates accompany every item. The daily workflow refreshes public Texas Tribune, State Bar, and Fifth Circuit RSS feeds at 13:00 UTC. Legal-topic filtering applies to general news feeds; opinions are labeled published or unpublished. Links older than 30 days expire; failed feeds retain prior links with their dates. Curated entries in `public/data/news-seed.json` provide reviewed lead stories and supplemental sources. No full articles are copied. The court/rules workflow remains weekly.
 
-The biography in `public/biography.html` matches the Religious Liberty Watch biography retrieved November 15, 2026. The builder uses this single source for the static About page and application biography.
+The biography in `public/biography.html` emphasizes the general and commercial litigation practice described in Eric’s firm biography, with religious liberty matters retained in a supporting section. The builder uses this single source for the static About page and application biography.
 
 
 Business Court coverage includes the five operational divisions (1, 3, 4, 8 and 11), with official division pages, counties, judges, re:SearchTX docket access, current statewide rules and division procedures. The directory source is `data/business-court-sources.json`; `scripts/ingest/business.py` refreshes rule links and text during publication and weekly updates. Failed retrievals retain prior text with a status label. `scripts/business_catalog.py` merges this coverage into every generated catalog, court page and portable download.

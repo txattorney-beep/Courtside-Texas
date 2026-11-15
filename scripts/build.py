@@ -10,6 +10,10 @@ def build():
  cat=json.loads(gzip.decompress((DIST/'data'/'catalog.json.gz').read_bytes()))
  from business_catalog import add_business_courts
  cat=add_business_courts(ROOT,DIST,cat)
+ from records_catalog import add_records_links,quick_links,court_links
+ cat=add_records_links(DIST,cat)
+ search_page=DIST/"search/index.html"
+ search_page.write_text(search_page.read_text().replace("<!--RECORDS_PORTALS-->",quick_links()))
  urls=['/'];stamp=cat['status']['checkedAt'][:10]
  def link(url,label):return f'<a href="{e(url,quote=True)}" target="_blank" rel="noopener">{e(label)} ↗</a>' if url.startswith(('https://','http://')) else ''
  def page(path,title,desc,content,entity=None):
@@ -24,12 +28,13 @@ def build():
   for r in c.get('regionalRules',[]):ids.update('oca-'+str(x) for x in r['documentIds'])
   docs=[d for d in cat['documents'] if d['id'] in ids or c['id'] in d.get('courtIds',[])]
   jurisdiction=', '.join(c['counties']) or ', '.join(c['cities'])
-  content=f'<p>{e(c["level"])} · {e(jurisdiction)}</p>'+(f'<p>Judge: {e(c["judge"])}</p>' if c.get('judge') else '')+f'<div class="toolbar">{link(c["url"],"Official court website")}{link(c["docket"]["url"],"Docket search")}</div><p>{e(c["docket"]["access"])}</p><p><a class="primary" href="/?court={e(c["id"],quote=True)}">Open in searchable directory</a></p><h2>Local rules and regional rules</h2><p>Documents associated with this court or its administrative judicial region. Verify applicability to the relevant county and proceeding.</p><ul>'+''.join(f'<li>{link(d["sourceUrl"],d["title"])}</li>' for d in docs)+'</ul>'
+  content=f'<p>{e(c["level"])} · {e(jurisdiction)}</p>'+(f'<p>Judge: {e(c["judge"])}</p>' if c.get('judge') else '')+f'<div class="toolbar">{link(c["url"],"Official court website")}{link(c["records"][0]["url"],"Records search")}</div><p>{e(c["records"][0]["note"])}</p><p><a class="primary" href="/?court={e(c["id"],quote=True)}">Open in searchable directory</a></p><h2>Local rules and regional rules</h2><p>Documents associated with this court or its administrative judicial region. Verify applicability to the relevant county and proceeding.</p><ul>'+''.join(f'<li>{link(d["sourceUrl"],d["title"])}</li>' for d in docs)+'</ul>'
   if not docs:content+='<p>No court-specific documents are linked in the current repository. Check the court website for local rules and standing orders.</p>'
+  content+=court_links(c)
   content+='<h2>Court locations</h2>'+''.join(f'<p><strong>{e(l.get("county") or l.get("city") or "Location")}</strong><br>{e(l.get("address", ""))}<br>{e(l.get("city", ""))}, TX {e(l.get("zip", ""))}<br>{link(l["url"],"Location website") if l.get("url") else ""}</p>' for l in c.get('locations',[]))
   content+='<p>'+link(c['sourceUrl'],'Official directory source')+'</p>'
   page('/courts/'+c['id']+'/',c['name'],f'{c["name"]}: official website, docket portal, local rules, locations and court information. {jurisdiction}.',content,{'@type':'GovernmentOrganization','name':c['name'],'url':c['url']})
- courtlist='<p>Texas Business Court divisions, state district and appellate courts, federal district courts, and the Fifth Circuit.</p><ul>'+''.join(f'<li><a href="/courts/{e(c["id"])}/">{e(c["name"])}</a> · {e(", ".join(c["counties"]) or c["level"])}</li>' for c in cat['courts'])+'</ul>'
+ courtlist=quick_links()+'<p>Texas Business Court divisions, state district and appellate courts, federal district courts, and the Fifth Circuit.</p><ul>'+''.join(f'<li><a href="/courts/{e(c["id"])}/">{e(c["name"])}</a> · {e(", ".join(c["counties"]) or c["level"])}</li>' for c in cat['courts'])+'</ul>'
  page('/courts/','Texas court directory','Browse Texas Business Court divisions, state district courts, state appellate courts, federal district courts, and the Fifth Circuit.',courtlist)
  for catname,path,title in [('local','rules','Texas local court rules'),('practice','practice','Federal and Texas civil practice rules')]:
   ds=[d for d in cat['documents'] if d['category']==catname];body='<p><a class="primary" href="/#'+('local' if catname=='local' else 'practice')+'">Search indexed rule text</a></p><ul>'+''.join(f'<li>{link(d["sourceUrl"],d["title"])} · {e(d.get("county") or d.get("jurisdiction") or "")}</li>' for d in ds)+'</ul>';page('/'+path+'/',title,'Official-source links and searchable rule collections for Texas litigation.',body)

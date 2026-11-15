@@ -121,3 +121,34 @@ test('release and service worker checks bypass edge cache; fingerprinted assets 
  const r=await worker.fetch(new Request('https://courtsidetexas.com/assets/app.123456abcdef.js'),{},wait);
  assert.equal(r.headers.get('Cache-Control'),'public, max-age=31536000, immutable');
 });
+
+test('every court exposes records links in its static page and search result',()=>{
+ const catalog=read('catalog.json.gz');
+ for(const court of catalog.courts){
+  assert.ok(court.records.length>0,court.id);
+  assert.ok(court.records.every(r=>/^https?:\/\//.test(r.url)),court.id);
+  const page=fs.readFileSync('dist/courts/'+court.id+'/index.html','utf8');
+  assert.ok(page.includes('id="records"'),court.id);
+  assert.ok(page.includes('Records search'),court.id);
+  const result=records.find(r=>r.id===court.id);
+  assert.equal(result.recordUrl,court.records[0].url,court.id);
+ }
+});
+test('records shortcuts and county/clerk alternatives survive building and portable export',()=>{
+ const catalog=read('catalog.json.gz');
+ assert.ok(catalog.recordPortals.some(p=>p.url==='https://pcl.uscourts.gov/pcl/index.jsf'));
+ assert.ok(catalog.recordPortals.some(p=>p.label==='re:SearchTX'));
+ const harris=catalog.courts.find(c=>c.level==='State district'&&c.counties.length===1&&c.counties[0]==='Harris');
+ assert.ok(harris.records[0].url.includes('hcdistrictclerk.com'));
+ assert.ok(harris.records.some(r=>r.url.includes('research.txcourts.gov')));
+ const rural=catalog.courts.find(c=>c.level==='State district'&&c.records.some(r=>r.kind==='clerk'));
+ assert.ok(rural);
+ const app=fs.readFileSync('public/app.js','utf8');
+ assert.ok(app.includes('recordPortals:catalog.recordPortals'));
+ const offline=fs.readFileSync('dist/offline-template.html','utf8');
+ assert.ok(offline.includes('All records links')&&offline.includes('DATA.recordPortals'));
+ for(const path of ['news/index.html','search/index.html','courts/index.html']){
+  const page=fs.readFileSync('dist/'+path,'utf8');
+  assert.ok(page.includes('PACER Case Locator')&&page.includes('re:SearchTX'),path);
+ }
+});

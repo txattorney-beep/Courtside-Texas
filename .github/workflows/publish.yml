@@ -2,7 +2,7 @@ name: Validate and publish site
 on:
   push:
     branches: [main]
-    paths: ['public/**', 'scripts/build.py', 'scripts/business_catalog.py', 'scripts/ingest/business.py', 'data/business-court-sources.json', 'scripts/search_index.py', 'tests/**', 'scripts/news_page.py', 'scripts/validate.py', '.github/workflows/publish.yml']
+    paths: ['public/**', 'scripts/build.py', 'scripts/business_catalog.py', 'scripts/ingest/business.py', 'data/business-court-sources.json', 'scripts/records_catalog.py', 'scripts/search_index.py', 'tests/**', 'scripts/news_page.py', 'scripts/validate.py', '.github/workflows/publish.yml']
   workflow_dispatch:
 permissions:
   contents: write

@@ -14,7 +14,7 @@ def build_search_index(root, dist, catalog):
         for did in ids:
             if did in court_docs: court_docs[did].add(c['id'])
         places=' · '.join(c.get('cities',[])+c.get('counties',[]))
-        add(id=c['id'],kind='courts',title=c['name'],url='/courts/'+c['id']+'/',sourceUrl=c['url'],
+        add(id=c['id'],kind='courts',title=c['name'],url='/courts/'+c['id']+'/',sourceUrl=c['url'],recordUrl=c['records'][0]['url'],recordLabel=c['records'][0]['label'],
             detail=c['level']+(' · '+places if places else ''),body=' '.join(filter(None,[c.get('judge'),places])),
             keywords=' '.join([c.get('shortName',''),c['level'],*c.get('aliases',[])]))
     for d in catalog['documents']:
@@ -31,6 +31,8 @@ def build_search_index(root, dist, catalog):
     for i,a in enumerate(news['articles']):
         add(id='news-'+str(i),kind='news',title=a['title'],url=a['url'],detail=a['publisher']+' · '+a['date'],
             keywords=' '.join([a['publisher'],a['category'],a.get('kind','')]),date=a['date'])
+    for i,p in enumerate(catalog['recordPortals']):
+        add(id='records-portal-'+str(i),kind='pages',title=p['label'],url=p['url'],detail='Court records & docket search',body=p['note'],keywords='records dockets case search PACER' if i==0 else 'records dockets case search research tx re search texas')
     bio=html.unescape(re.sub('<[^>]+>',' ',(root/'public/biography.html').read_text()))
     add(id='about',kind='pages',title='About Eric A. Hudson',url='/about/',detail='The lawyer behind Courtside Texas',body=' '.join(bio.split()))
     add(id='sources',kind='pages',title='Sources, coverage & updates',url='/#sources',detail='Official sources and weekly updates',body='Court directory, local rule indexing, civil practice rules, administrative agency directory, docket access and retrieval coverage.')
