@@ -79,3 +79,45 @@ test('fingerprinted search page and worker use the same versioned engine',()=>{
  assert.ok(ui.includes("new Worker('"+engineAsset+"')"));
  assert.ok(fs.existsSync('dist'+engineAsset));
 });
+
+const vm=require('node:vm');
+test('the court-page fallback itself finds business courts when the query includes rules',()=>{
+ const app=fs.readFileSync('public/app.js','utf8');
+ const fn=app.split('\n').find(line=>line.startsWith('function courtResults()'));
+ const context={window:{CourtsideSearch:engine},catalog:read('catalog.json.gz'),query:'business court rules',view:'courts',saved:new Set(),filter:'all',county:''};
+ vm.createContext(context);vm.runInContext(fn+';this.matches=courtResults()',context);
+ assert.equal(context.matches.length,5);
+ assert.ok(context.matches.every(c=>c.level==='Business Court'));
+ context.county='Harris';vm.runInContext('this.matches=courtResults()',context);assert.equal(context.matches.length,1);
+});
+test('back and forward navigation routes legacy queries to the full-site search',()=>{
+ const app=fs.readFileSync('public/app.js','utf8');
+ const handler=app.slice(app.indexOf("window.addEventListener('popstate'"),app.indexOf("window.addEventListener('beforeinstallprompt'"));
+ let callback,redirect;
+ const context={URLSearchParams,window:{addEventListener:(_,fn)=>{callback=fn;}},location:{search:'?q=business+court+rules',hash:''},routes:{courts:'Court directory'},searchAll:(q,replace)=>redirect={q,replace},render:()=>assert.fail('A legacy query must not render court-only results')};
+ vm.createContext(context);vm.runInContext(handler,context);callback();
+ assert.deepEqual(redirect,{q:'business court rules',replace:true});
+});
+function workerHarness(cached){
+ const calls={reads:0,writes:0,fetches:[]};
+ const ctx={Request,Response,Headers,URL,console,module:{exports:{}},caches:{default:{match:async()=>{calls.reads++;return cached?.clone();},put:async()=>{calls.writes++;}}},fetch:async(url,options)=>{calls.fetches.push({url,options});return new Response('content');}};
+ vm.createContext(ctx);vm.runInContext(fs.readFileSync('cloudflare/worker.js','utf8').replace('export default','module.exports ='),ctx);
+ return {worker:ctx.module.exports,calls,wait:{waitUntil:()=>{}}};
+}
+test('cached HTML is revalidated by browsers even if the stored response had a four-hour TTL',async()=>{
+ const {worker,calls,wait}=workerHarness(new Response('old edge response',{headers:{'Cache-Control':'public, max-age=14400'}}));
+ const r=await worker.fetch(new Request('https://courtsidetexas.com/'),{},wait);
+ assert.equal(r.headers.get('Cache-Control'),'no-cache, max-age=0, must-revalidate');
+ assert.equal(calls.fetches.length,0);
+});
+test('release and service worker checks bypass edge cache; fingerprinted assets remain cacheable',async()=>{
+ for(const path of ['/release.json','/sw.js']){
+  const {worker,calls,wait}=workerHarness(new Response('stale'));
+  const r=await worker.fetch(new Request('https://courtsidetexas.com'+path),{},wait);
+  assert.equal(calls.reads,0);assert.equal(calls.writes,0);assert.equal(calls.fetches[0].options.cf.cacheTtl,0);
+  assert.match(r.headers.get('Cache-Control'),/must-revalidate/);
+ }
+ const {worker,wait}=workerHarness(new Response('script'));
+ const r=await worker.fetch(new Request('https://courtsidetexas.com/assets/app.123456abcdef.js'),{},wait);
+ assert.equal(r.headers.get('Cache-Control'),'public, max-age=31536000, immutable');
+});

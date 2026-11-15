@@ -16,7 +16,7 @@ Website: https://courtsidetexas.com
 
 ## Hosting and publication
 
-GitHub stores the source, data snapshots, and generated `site/` output. A small Cloudflare Worker in `cloudflare/worker.js` serves that public output at courtsidetexas.com. It uses the fixed public repository origin, streams files, caches for two minutes, and requires no GitHub or visitor credentials. The `www` hostname redirects to the canonical apex domain.
+GitHub stores the source, data snapshots, and generated `site/` output. A small Cloudflare Worker in `cloudflare/worker.js` serves that public output at courtsidetexas.com. It uses the fixed public repository origin, streams files, and requires no GitHub or visitor credentials. Edge copies last up to two minutes; HTML and unversioned scripts must be revalidated by browsers. Release checks and the service worker bypass the edge cache. Fingerprinted assets can be cached long term. Cloudflare’s zone `browser_cache_ttl` must be `0` (Respect Existing Headers), otherwise its default four-hour browser TTL overrides these update rules. The `www` hostname redirects to the canonical apex domain.
 
 Source edits under `public/` trigger the publishing workflow. `scripts/build.py` generates the court pages and sitemap. The workflow validates before replacing `site/` and committing. No Node dependency installation is required.
 
