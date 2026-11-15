@@ -9,6 +9,7 @@ const date=s=>s?new Date(/^\d{4}-\d{2}-\d{2}$/.test(s)?s+'T12:00:00Z':s).toLocal
 let catalog={courts:[],documents:[],resources:[],admin:{titles:[],agencies:[]},status:{}},view='courts',query='',filter='all',county='',pageSize=15,saved=new Set(),textDocs=null,textLoading=null,ruleResults=[],ruleTotal=0,searchPending=false,searchGeneration=0,ruleType='all',installPrompt=null;
 try{saved=new Set(JSON.parse(localStorage.getItem('courtside-favorites-v1')||'[]').filter(x=>typeof x==='string'))}catch{}
 const APP_RELEASE='__COURTSIDE_RELEASE__';
+const APP_BUILT_AT='__COURTSIDE_BUILT_AT__';
 const routes={courts:'Court directory',news:'Legal news',local:'Local rules',practice:'Civil practice rules',admin:'Administrative rules',desk:'My Courts',about:'About Eric',sources:'Sources & updates'};
 const iconMap={courts:'court',news:'book',local:'book',practice:'book',admin:'agency',desk:'star',about:'user',sources:'refresh'};
 function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$('#toast').style.display='none',3500)}
@@ -51,5 +52,5 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
 
 // Open tabs check for deployed application changes when a visitor returns.
 let releaseCheckRunning=false;
-async function checkRelease(){if(releaseCheckRunning||!navigator.onLine||document.visibilityState==='hidden')return;releaseCheckRunning=true;try{const r=await fetch('/release.json',{cache:'no-store'});if(r.ok){const latest=await r.json();if(latest.version&&latest.version!==APP_RELEASE&&APP_RELEASE!=='__COURTSIDE_'+'RELEASE__')location.reload()}}catch{}finally{releaseCheckRunning=false}}
-document.addEventListener('visibilitychange',checkRelease);window.addEventListener('pageshow',checkRelease);checkRelease();setInterval(checkRelease,30000);
+async function checkRelease(){if(releaseCheckRunning||!navigator.onLine||document.visibilityState==='hidden')return;releaseCheckRunning=true;try{const r=await fetch('/release.json',{cache:'no-store'});if(r.ok){const latest=await r.json();if(latest.version&&latest.version!==APP_RELEASE&&Date.parse(latest.builtAt)>Date.parse(APP_BUILT_AT)){const key='courtside-release-reload';try{const last=Number(sessionStorage.getItem(key)||0);if(Date.now()-last<60000)return;sessionStorage.setItem(key,String(Date.now()))}catch{return}const pending=$('#search')?.value?.trim();if(pending)searchAll(pending,true);else location.reload()}}}catch{}finally{releaseCheckRunning=false}}
+document.addEventListener('visibilitychange',checkRelease);window.addEventListener('pageshow',checkRelease);setInterval(checkRelease,30000);

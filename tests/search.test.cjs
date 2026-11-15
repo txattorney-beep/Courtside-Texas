@@ -152,3 +152,15 @@ test('records shortcuts and county/clerk alternatives survive building and porta
   assert.ok(page.includes('PACER Case Locator')&&page.includes('re:SearchTX'),path);
  }
 });
+
+test('release checks never downgrade a new page or enter a reload loop',async()=>{
+ const app=fs.readFileSync('public/app.js','utf8');
+ const fn=app.split('\n').find(line=>line.startsWith('async function checkRelease()'));
+ let latest={version:'old',builtAt:'2026-11-14T12:00:00Z'},reloads=0;
+ const storage=new Map();
+ const context={navigator:{onLine:true},document:{visibilityState:'visible'},releaseCheckRunning:false,APP_RELEASE:'current',APP_BUILT_AT:'2026-11-15T12:00:00Z',fetch:async()=>({ok:true,json:async()=>latest}),sessionStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)},location:{reload:()=>reloads++},$:()=>null,Date};
+ vm.createContext(context);vm.runInContext(fn,context);
+ await context.checkRelease();assert.equal(reloads,0);
+ latest={version:'new',builtAt:'2026-11-16T12:00:00Z'};
+ await context.checkRelease();await context.checkRelease();assert.equal(reloads,1);
+});

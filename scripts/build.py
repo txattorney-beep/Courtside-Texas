@@ -1,4 +1,4 @@
-import pathlib,json,html,shutil,gzip,hashlib,xml.etree.ElementTree as ET
+import pathlib,json,html,shutil,gzip,hashlib,datetime,xml.etree.ElementTree as ET
 ROOT=pathlib.Path(__file__).resolve().parents[1];DIST=ROOT/'dist';ORIGIN='https://courtsidetexas.com';e=html.escape
 
 def build():
@@ -52,12 +52,13 @@ def build():
  version_assets(DIST)
  print(json.dumps({'pages':len(urls),'courts':len(cat['courts']),'sitemap':'dist/sitemap.xml'}))
 def version_assets(dist):
+ built_at=datetime.datetime.now(datetime.timezone.utc).isoformat()
  files=['search-engine.js','search.js','search.css','app.js','bio.js','styles.css','news.js','news.css']
  version=hashlib.sha256(b''.join((dist/name).read_bytes() for name in files)+(ROOT/'public/sw.js').read_bytes()).hexdigest()[:16]
  mapping={}
  assets=dist/'assets';assets.mkdir(exist_ok=True)
  for name in files:
-  source=(dist/name).read_text().replace('__COURTSIDE_RELEASE__',version)
+  source=(dist/name).read_text().replace('__COURTSIDE_RELEASE__',version).replace('__COURTSIDE_BUILT_AT__',built_at)
   for old,new in mapping.items():source=source.replace("'"+old+"'","'"+new+"'")
   (dist/name).write_text(source)
   digest=hashlib.sha256(source.encode()).hexdigest()[:12]
@@ -70,6 +71,6 @@ def version_assets(dist):
  worker=(dist/'sw.js').read_text().replace('__COURTSIDE_RELEASE__',version)
  for old,new in mapping.items():worker=worker.replace("'"+old+"'","'"+new+"'")
  (dist/'sw.js').write_text(worker)
- (dist/'release.json').write_text(json.dumps({'version':version}))
+ (dist/'release.json').write_text(json.dumps({'version':version,'builtAt':built_at}))
 
 if __name__=='__main__':build()

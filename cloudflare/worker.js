@@ -22,7 +22,7 @@ export default {
   const key=new Request(ORIGIN+path,{method:'GET'});let cached=uncached?null:await caches.default.match(key);
   if(cached)return toBrowser(cached,path,request.method);
   try{
-   const upstream=await fetch(REPOSITORY+path,{headers:{'User-Agent':'CourtsideTexas/1.0'},cf:{cacheTtl:uncached?0:120,cacheEverything:true}});
+   const upstream=await fetch(REPOSITORY+path+(uncached?'?courtside-refresh='+Math.floor(Date.now()/60000):''),{headers:{'User-Agent':'CourtsideTexas/1.0'},cf:{cacheTtl:uncached?0:120,cacheEverything:true}});
    if(!upstream.ok){console.log(JSON.stringify({event:'origin_error',status:upstream.status,path}));return new Response(upstream.status===404?'Page not found. Visit https://courtsidetexas.com/':'Source temporarily unavailable. Please retry shortly.',{status:upstream.status===404?404:503,headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store'}})}
    const headers=new Headers({'Content-Type':TYPES[extension],'Cache-Control':'public, max-age=120','X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','Strict-Transport-Security':'max-age=31536000; includeSubDomains','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://static.wixstatic.com data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'",'Permissions-Policy':'camera=(), microphone=(), geolocation=()'});
    if(upstream.headers.get('etag'))headers.set('ETag',upstream.headers.get('etag'));
