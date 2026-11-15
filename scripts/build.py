@@ -4,6 +4,8 @@ ROOT=pathlib.Path(__file__).resolve().parents[1];DIST=ROOT/'dist';ORIGIN='https:
 def build():
  if DIST.exists():shutil.rmtree(DIST)
  shutil.copytree(ROOT/'public',DIST)
+ biography=(ROOT/'public'/'biography.html').read_text()
+ (DIST/'bio.js').write_text('window.COURTSIDE_BIO='+json.dumps(biography)+';')
  (DIST/'eric-hudson.jpg').unlink(missing_ok=True)
  cat=json.loads(gzip.decompress((DIST/'data'/'catalog.json.gz').read_bytes()));urls=['/'];stamp=cat['status']['checkedAt'][:10]
  def link(url,label):return f'<a href="{e(url,quote=True)}" target="_blank" rel="noopener">{e(label)} ↗</a>' if url.startswith(('https://','http://')) else ''
@@ -27,8 +29,12 @@ def build():
  for catname,path,title in [('local','rules','Texas local court rules'),('practice','practice','Federal and Texas civil practice rules')]:
   ds=[d for d in cat['documents'] if d['category']==catname];body='<p><a class="primary" href="/#'+('local' if catname=='local' else 'practice')+'">Search indexed rule text</a></p><ul>'+''.join(f'<li>{link(d["sourceUrl"],d["title"])} · {e(d.get("county") or d.get("jurisdiction") or "")}</li>' for d in ds)+'</ul>';page('/'+path+'/',title,'Official-source links and searchable rule collections for Texas litigation.',body)
  admin=cat['admin'];body='<p>'+link(admin['search_url'],'Search all Texas Administrative Code text')+'</p><ul>'+''.join(f'<li>{link(a["url"],a["name"])} · Title {a["title"]}, Part {a["part"]}</li>' for a in admin['agencies'])+'</ul>';page('/administrative-rules/','Texas administrative agency rules','All Texas Administrative Code titles and agency parts, with official links and statewide rule search.',body)
- page('/about/','Eric A. Hudson','Eric A. Hudson is a litigation partner at Arambula Terrazas PLLC and the creator of Courtside Texas.', '<p class="lead">Commercial trial lawyer.  Constitutional advocate.</p><p>Eric A. Hudson is a litigation partner at Arambula | Terrazas PLLC in Austin.  His practice includes commercial and construction disputes, constitutional litigation, injunctions, and appeals.  He previously served as Senior Special Counsel in the Texas Attorney General’s Special Litigation Unit.</p><p>Courtside Texas gives practitioners a practical starting point for finding courts, local rules, docket portals, civil practice rules and administrative agency rules.</p><p><a class="primary" href="/#about">Read the full biography and media coverage</a></p><p><a href="mailto:ehudson@atlawpllc.com">ehudson@atlawpllc.com</a></p>'+link('https://www.atlawpllc.com/eric-hudson','Firm biography')+' '+link('https://www.linkedin.com/in/txattorney','LinkedIn'),{'@type':'Person','name':'Eric A. Hudson','jobTitle':'Litigation Partner','worksFor':{'@type':'LegalService','name':'Arambula Terrazas PLLC'},'sameAs':['https://www.atlawpllc.com/eric-hudson','https://www.linkedin.com/in/txattorney']})
- xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{ORIGIN+u}</loc><lastmod>{stamp}</lastmod></url>' for u in urls)+'</urlset>'
+ page('/about/','Eric A. Hudson','Eric A. Hudson, litigation partner and creator of Courtside Texas.', '<p class="lead">Commercial trial lawyer.  Constitutional advocate.</p>'+biography+'<p><a href="mailto:ehudson@atlawpllc.com">ehudson@atlawpllc.com</a> · <a href="/#about">About Courtside and contact information</a></p>')
+ from news_page import build_news_page
+ build_news_page(ROOT,DIST)
+ urls.append('/news/')
+ news_stamp=json.loads((ROOT/'public'/'data'/'news.json').read_text()).get('checkedAt',stamp)[:10]
+ xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{ORIGIN+u}</loc><lastmod>{news_stamp if u=='/news/' else stamp}</lastmod></url>' for u in urls)+'</urlset>'
  (DIST/'sitemap.xml').write_text(xml);(DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nDisallow: /data/\nSitemap: '+ORIGIN+'/sitemap.xml\n');(DIST/'CNAME').write_text('courtsidetexas.com\n');(DIST/'.nojekyll').touch()
  (DIST/'404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | Courtside Texas</title><link rel="stylesheet" href="/styles.css"><main class="main"><h1>Let’s get you to the right court.</h1><p>This page could not be found.</p><a class="primary" href="/">Search Courtside Texas</a></main></html>')
  print(json.dumps({'pages':len(urls),'courts':len(cat['courts']),'sitemap':'dist/sitemap.xml'}))

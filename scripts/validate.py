@@ -19,4 +19,16 @@ s=ET.parse(p/'sitemap.xml');urls=[x.text for x in s.findall('.//{http://www.site
 assert 'Sitemap: https://courtsidetexas.com/sitemap.xml' in (p/'robots.txt').read_text()
 assert 'noindex' not in (p/'index.html').read_text()
 assert all((p/x).exists() for x in ['app.js','styles.css','offline-template.html','brand-mark.svg','favicon.svg','indexnow-key.txt'])
+news=json.loads((p/'data/news.json').read_text())
+articles=news['articles'];news_urls=[a['url'] for a in articles]
+assert articles and len(news_urls)==len(set(news_urls))
+assert all(a['category'] in ['Texas','Fifth Circuit','Practice'] and a['title'] and a['publisher'] and re.fullmatch(r'\d{4}-\d{2}-\d{2}',a['date']) and a['url'].startswith('https://') for a in articles)
+assert news['feedStatus'] and any(source.get('success') for source in news['feedStatus'])
+news_html=(p/'news/index.html').read_text()
+from html import escape
+assert all(escape(url,quote=True) in news_html for url in news_urls)
+assert 'https://courtsidetexas.com/news/' in urls
+bio=(ROOT/'public/biography.html').read_text()
+assert bio in (p/'about/index.html').read_text()
+assert json.loads((p/'bio.js').read_text().removeprefix('window.COURTSIDE_BIO=').removesuffix(';'))==bio
 print(json.dumps({'passed':True,'courts':len(courts),'documents':len(docs),'searchable':len(texts),'sitemapPages':len(urls)}))

@@ -45,3 +45,9 @@ The directory is an independent reference, not legal advice or an official court
 ## Search engines
 
 The generated sitemap lists individual court pages and reference indexes. IndexNow notifications are submitted through `scripts/submit_indexnow.py` after refresh; acceptance does not guarantee indexing. Google Search Console ownership verification and sitemap submission may require Eric's Google account. There is no ranking or indexing guarantee.
+
+## Legal news desk
+
+`/news/` is a headline-first aggregator with three desktop columns and a single phone column. Original article links, publisher names and publication dates accompany every item. The daily workflow refreshes public Texas Tribune, State Bar, and Fifth Circuit RSS feeds at 13:00 UTC. Legal-topic filtering applies to general news feeds; opinions are labeled published or unpublished. Links older than 30 days expire; failed feeds retain prior links with their dates. Curated entries in `public/data/news-seed.json` provide reviewed lead stories and supplemental sources. No full articles are copied. The court/rules workflow remains weekly.
+
+The biography in `public/biography.html` matches the Religious Liberty Watch biography retrieved November 15, 2026. The builder uses this single source for the static About page and application biography.

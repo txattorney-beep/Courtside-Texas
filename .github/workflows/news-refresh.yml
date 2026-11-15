@@ -1,0 +1,40 @@
+name: Daily legal news refresh
+on:
+  schedule:
+    - cron: '0 13 * * *'
+  push:
+    branches: [main]
+    paths: ['scripts/refresh_news.py', '.github/workflows/news-refresh.yml', 'public/data/news-seed.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: courtside-main-workflows
+  cancel-in-progress: false
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh current legal headlines
+        run: python3 scripts/refresh_news.py
+      - name: Build and validate
+        run: |
+          node --check public/news.js
+          python3 scripts/build.py
+          python3 scripts/validate.py
+      - name: Publish news edition
+        run: |
+          rm -rf site
+          cp -a dist site
+          git config user.name 'Courtside Texas news'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data/news.json site
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh Texas and Fifth Circuit legal headlines"
+            git pull --rebase origin main
+            git push
+          fi
+      - name: Notify search engines
+        run: python3 scripts/submit_indexnow.py

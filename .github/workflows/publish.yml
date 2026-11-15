@@ -2,7 +2,7 @@ name: Validate and publish site
 on:
   push:
     branches: [main]
-    paths: ['public/**', 'scripts/build.py', 'scripts/validate.py', '.github/workflows/publish.yml']
+    paths: ['public/**', 'scripts/build.py', 'scripts/news_page.py', 'scripts/validate.py', '.github/workflows/publish.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -17,6 +17,7 @@ jobs:
       - name: Build and check
         run: |
           node --check public/app.js
+          node --check public/news.js
           python3 scripts/build.py
           python3 scripts/validate.py
       - name: Publish static output
