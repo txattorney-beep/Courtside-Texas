@@ -17,6 +17,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Refresh current legal headlines
         run: python3 scripts/refresh_news.py
       - name: Build and validate
