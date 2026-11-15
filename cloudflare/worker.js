@@ -18,6 +18,8 @@ export default {
   if(path.includes('..')||path.includes('\\')||path.split('/').some(s=>s.startsWith('.'))||path.length>400)return new Response('Not found',{status:404});
   if(!path.split('/').pop().includes('.')){if(!path.endsWith('/'))return Response.redirect(ORIGIN+path+'/'+url.search,301);path+='index.html'}
   const extension=path.split('.').pop();if(!TYPES[extension])return new Response('Not found',{status:404});
+  // Compatibility switch: older open tabs must never auto-reload on version mismatch.
+  if(path==='/release.json')return new Response(request.method==='HEAD'?null:JSON.stringify({version:null,automaticReload:false}),{headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'}});
   const uncached=path==='/release.json'||path==='/sw.js';
   const key=new Request(ORIGIN+path,{method:'GET'});let cached=uncached?null:await caches.default.match(key);
   if(cached)return toBrowser(cached,path,request.method);

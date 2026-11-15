@@ -111,7 +111,7 @@ test('cached HTML is revalidated by browsers even if the stored response had a f
  assert.equal(calls.fetches.length,0);
 });
 test('release and service worker checks bypass edge cache; fingerprinted assets remain cacheable',async()=>{
- for(const path of ['/release.json','/sw.js']){
+ for(const path of ['/sw.js']){
   const {worker,calls,wait}=workerHarness(new Response('stale'));
   const r=await worker.fetch(new Request('https://courtsidetexas.com'+path),{},wait);
   assert.equal(calls.reads,0);assert.equal(calls.writes,0);assert.equal(calls.fetches[0].options.cf.cacheTtl,0);
@@ -153,14 +153,14 @@ test('records shortcuts and county/clerk alternatives survive building and porta
  }
 });
 
-test('release checks never downgrade a new page or enter a reload loop',async()=>{
+test('older open tabs receive a release response that cannot trigger automatic reloads',async()=>{
+ const {worker,calls,wait}=workerHarness(new Response('{"version":"stale"}'));
+ const response=await worker.fetch(new Request('https://courtsidetexas.com/release.json'),{},wait);
+ const release=await response.json();
+ assert.equal(release.version,null);assert.equal(release.automaticReload,false);
+ assert.equal(response.headers.get('Cache-Control'),'no-store');
+ assert.equal(calls.reads,0);assert.equal(calls.fetches.length,0);
  const app=fs.readFileSync('public/app.js','utf8');
- const fn=app.split('\n').find(line=>line.startsWith('async function checkRelease()'));
- let latest={version:'old',builtAt:'2026-11-14T12:00:00Z'},reloads=0;
- const storage=new Map();
- const context={navigator:{onLine:true},document:{visibilityState:'visible'},releaseCheckRunning:false,APP_RELEASE:'current',APP_BUILT_AT:'2026-11-15T12:00:00Z',fetch:async()=>({ok:true,json:async()=>latest}),sessionStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)},location:{reload:()=>reloads++},$:()=>null,Date};
- vm.createContext(context);vm.runInContext(fn,context);
- await context.checkRelease();assert.equal(reloads,0);
- latest={version:'new',builtAt:'2026-11-16T12:00:00Z'};
- await context.checkRelease();await context.checkRelease();assert.equal(reloads,1);
+ assert.ok(!app.includes('location.reload('));
+ assert.ok(!app.includes('setInterval(checkRelease'));
 });
