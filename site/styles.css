@@ -13,3 +13,5 @@
 
 .search-scope{font-size:12px;color:#65705e;margin:10px 0 8px}.searchbar input[type=hidden]{display:none}.searchbar input[type=search]{min-width:0}.details h1{overflow-wrap:anywhere}
 @media(max-width:600px){.details h1{font-size:34px!important}}
+
+.records-shortcuts{display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap;padding:12px 16px;margin:16px 0 24px;background:#eaf0e5;border:1px solid #d2dec9;border-radius:7px;font:13px/1.5 Arial,sans-serif;color:#193e38}.records-shortcuts a{display:inline-flex;align-items:center;min-height:44px;color:#193e38;text-decoration:underline;text-underline-offset:3px}.records-shortcuts strong{font-size:12px;text-transform:uppercase;letter-spacing:.5px}.court-records{border-top:1px solid #d2dec9;padding-top:18px;margin-top:24px}.court-records li{margin:14px 0}.court-records li>a{display:inline-flex;align-items:center;min-height:44px}.court-records li p{font-size:12px;color:#65705e;margin:0}.card-actions{flex-wrap:wrap}.search-result .search-source{margin-right:16px}@media(max-width:600px){.records-shortcuts{gap:2px 18px;padding:10px 12px}.records-shortcuts strong{width:100%}}

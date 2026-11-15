@@ -22,11 +22,11 @@ function run(records,query,context='courts'){
   let score=checks.reduce((n,p)=>n+(p.test(r._title)?40:p.test(r._meta)?12:2),0)+allChecks.reduce((n,p)=>n+(p.test(r._title)?5:0),0);
   const phrase=normalize(query).trim();if(r._title.includes(phrase))score+=35;
   if(required.length>1&&r._body.includes(required.join(' ')))score+=8;
-  hits.set(r.id,{id:r.id,kind:r.kind,title:r.title,url:r.url,sourceUrl:r.sourceUrl,detail:r.detail,status:r.status,date:r.date,fullText:!!r.fullText,score,snippet:excerpt(r.body,phrases.length?phrases[0].split(' '):required),courtIds:r.courtIds});
+  hits.set(r.id,{id:r.id,kind:r.kind,title:r.title,url:r.url,sourceUrl:r.sourceUrl,recordUrl:r.recordUrl,recordLabel:r.recordLabel,detail:r.detail,status:r.status,date:r.date,fullText:!!r.fullText,score,snippet:excerpt(r.body,phrases.length?phrases[0].split(' '):required),courtIds:r.courtIds});
  }
  // Match a court through its linked rules too, without treating an unrelated court as a direct title match.
  const byId=new Map(records.filter(r=>r.kind==='courts').map(r=>[r.id,r]));
- for(const hit of [...hits.values()])if(hit.kind==='local')for(const id of hit.courtIds||[]){const c=byId.get(id);if(!c||hits.has(id))continue;hits.set(id,{id,kind:'courts',title:c.title,url:c.url,sourceUrl:c.sourceUrl,detail:c.detail,score:Math.min(20,hit.score/4),snippet:'Matching linked rule: '+hit.title,related:true});}
+ for(const hit of [...hits.values()])if(hit.kind==='local')for(const id of hit.courtIds||[]){const c=byId.get(id);if(!c||hits.has(id))continue;hits.set(id,{id,kind:'courts',title:c.title,url:c.url,sourceUrl:c.sourceUrl,recordUrl:c.recordUrl,recordLabel:c.recordLabel,detail:c.detail,score:Math.min(20,hit.score/4),snippet:'Matching linked rule: '+hit.title,related:true});}
  const priority=({desk:'courts',about:'pages',sources:'pages'})[context]||context;
  const order=Object.keys(groups);if(order.includes(priority)){order.splice(order.indexOf(priority),1);order.unshift(priority);}
  const result=order.map(kind=>({kind,label:groups[kind],items:[...hits.values()].filter(r=>r.kind===kind).sort((a,b)=>b.score-a.score||(kind==='news'?(b.date||'').localeCompare(a.date||''):0)||a.title.localeCompare(b.title,undefined,{numeric:true}))})).filter(g=>g.items.length);
