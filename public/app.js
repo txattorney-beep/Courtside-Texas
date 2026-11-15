@@ -5,7 +5,7 @@ const icons={search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/>
 const ico=n=>`<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${icons[n]||icons.book}</svg>`;
 const link=(url,label,cl='')=>`<a href="${esc(safeURL(url))}" target="_blank" rel="noopener" class="${cl}">${label}</a>`;
 const safeURL=u=>/^https?:\/\//.test(u||'')?u:'#';
-const date=s=>s?new Date(s).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'America/Chicago'}):'Not checked';
+const date=s=>s?new Date(/^\d{4}-\d{2}-\d{2}$/.test(s)?s+'T12:00:00Z':s).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'America/Chicago'}):'Not checked';
 let catalog={courts:[],documents:[],resources:[],admin:{titles:[],agencies:[]},status:{}},view='courts',query='',filter='all',county='',pageSize=15,saved=new Set(),textDocs=null,textLoading=null,ruleResults=[],ruleTotal=0,searchPending=false,searchGeneration=0,ruleType='all',installPrompt=null;
 try{saved=new Set(JSON.parse(localStorage.getItem('courtside-favorites-v1')||'[]').filter(x=>typeof x==='string'))}catch{}
 const APP_RELEASE='__COURTSIDE_RELEASE__';
