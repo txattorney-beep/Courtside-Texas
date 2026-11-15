@@ -31,4 +31,19 @@ assert 'https://courtsidetexas.com/news/' in urls
 bio=(ROOT/'public/biography.html').read_text()
 assert bio in (p/'about/index.html').read_text()
 assert json.loads((p/'bio.js').read_text().removeprefix('window.COURTSIDE_BIO=').removesuffix(';'))==bio
+business=[x for x in courts if x['level']=='Business Court']
+assert {x['division'] for x in business}=={1,3,4,8,11}
+assert len(courts)>=546 and all(x['docket']['label']=='re:SearchTX' for x in business)
+assert next(x for x in business if x['division']==3)['counties'].count('Bastrop')==1
+assert 'Montgomery' in next(x for x in business if x['division']==11)['counties']
+for court in business:
+ assert len([d for d in docs if court['id'] in d.get('courtIds',[])])>=2
+app=(p/'app.js').read_text()
+assert 'class="news-shortcut" href="/news/"' in app
+assert 'Business Court' in app and 'business-local-rules' in dids
+for page in [p/'index.html',p/'about/index.html',p/'courts/index.html']:
+ assert 'href="/news/"' in page.read_text()
+ assert '/assets/styles.' in page.read_text()
+assert re.search(r'src="/assets/app\.[a-f0-9]+\.js"',(p/'index.html').read_text())
+assert '__COURTSIDE_RELEASE__' not in (p/'sw.js').read_text()
 print(json.dumps({'passed':True,'courts':len(courts),'documents':len(docs),'searchable':len(texts),'sitemapPages':len(urls)}))

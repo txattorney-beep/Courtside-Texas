@@ -2,7 +2,7 @@ name: Validate and publish site
 on:
   push:
     branches: [main]
-    paths: ['public/**', 'scripts/build.py', 'scripts/news_page.py', 'scripts/validate.py', '.github/workflows/publish.yml']
+    paths: ['public/**', 'scripts/build.py', 'scripts/business_catalog.py', 'scripts/ingest/business.py', 'data/business-court-sources.json', 'scripts/news_page.py', 'scripts/validate.py', '.github/workflows/publish.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -16,6 +16,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - name: Refresh Business Court rules
+        run: |
+          if ! command -v pdftotext; then sudo apt-get update && sudo apt-get install -y poppler-utils; fi
+          python3 scripts/ingest/business.py
       - name: Build and check
         run: |
           node --check public/app.js
@@ -28,7 +32,7 @@ jobs:
           cp -a dist site
           git config user.name 'Courtside Texas publishing'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site
+          git add site public/data/business.json
           if ! git diff --cached --quiet; then
             git commit -m "Publish Courtside Texas"
             git push

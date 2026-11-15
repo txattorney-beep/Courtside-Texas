@@ -1,4 +1,4 @@
-import pathlib,json,html,shutil,gzip,xml.etree.ElementTree as ET
+import pathlib,json,html,shutil,gzip,hashlib,xml.etree.ElementTree as ET
 ROOT=pathlib.Path(__file__).resolve().parents[1];DIST=ROOT/'dist';ORIGIN='https://courtsidetexas.com';e=html.escape
 
 def build():
@@ -7,13 +7,16 @@ def build():
  biography=(ROOT/'public'/'biography.html').read_text()
  (DIST/'bio.js').write_text('window.COURTSIDE_BIO='+json.dumps(biography)+';')
  (DIST/'eric-hudson.jpg').unlink(missing_ok=True)
- cat=json.loads(gzip.decompress((DIST/'data'/'catalog.json.gz').read_bytes()));urls=['/'];stamp=cat['status']['checkedAt'][:10]
+ cat=json.loads(gzip.decompress((DIST/'data'/'catalog.json.gz').read_bytes()))
+ from business_catalog import add_business_courts
+ cat=add_business_courts(ROOT,DIST,cat)
+ urls=['/'];stamp=cat['status']['checkedAt'][:10]
  def link(url,label):return f'<a href="{e(url,quote=True)}" target="_blank" rel="noopener">{e(label)} ↗</a>' if url.startswith(('https://','http://')) else ''
  def page(path,title,desc,content,entity=None):
   target=DIST/path.strip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True);urls.append(path)
   structured={'@context':'https://schema.org','@type':'WebPage','name':title,'description':desc,'url':ORIGIN+path,'publisher':{'@type':'Person','name':'Eric A. Hudson','url':ORIGIN+'/about/'}}
   if entity:structured['mainEntity']=entity
-  target.write_text(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | Courtside Texas</title><meta name="description" content="{e(desc,quote=True)}"><link rel="canonical" href="{ORIGIN+path}"><meta name="theme-color" content="#193e38"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">{json.dumps(structured).replace('<',chr(92)+'u003c')}</script></head><body><main class="main details"><a class="back-link" href="/">← Courtside Texas</a><h1 style="font-size:48px">{e(title)}</h1>{content}<footer class="footer"><p>A resource by <a href="/about/">Eric A. Hudson</a>.  Verify current rules at their official source.  Directory checked {stamp}.</p><a href="/">Search the directory →</a></footer></main></body></html>''')
+  target.write_text(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | Courtside Texas</title><meta name="description" content="{e(desc,quote=True)}"><link rel="canonical" href="{ORIGIN+path}"><meta name="theme-color" content="#193e38"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">{json.dumps(structured).replace('<',chr(92)+'u003c')}</script></head><body><main class="main details"><nav class="reference-nav"><a class="back-link" href="/">← Courtside Texas</a><a class="back-link" href="/news/">Legal news ↗</a></nav><h1 style="font-size:48px">{e(title)}</h1>{content}<footer class="footer"><p>A resource by <a href="/about/">Eric A. Hudson</a>.  Verify current rules at their official source.  Directory checked {stamp}.</p><a href="/">Search the directory →</a></footer></main></body></html>''')
  for c in cat['courts']:
   ids={str(x) if str(x).startswith('oca-') else 'oca-'+str(x) for x in c.get('ruleDocumentIds',[])}
   for r in c.get('regionalRules',[]):ids.update('oca-'+str(x) for x in r['documentIds'])
@@ -24,8 +27,8 @@ def build():
   content+='<h2>Court locations</h2>'+''.join(f'<p><strong>{e(l.get("county") or l.get("city") or "Location")}</strong><br>{e(l.get("address", ""))}<br>{e(l.get("city", ""))}, TX {e(l.get("zip", ""))}<br>{link(l["url"],"Location website") if l.get("url") else ""}</p>' for l in c.get('locations',[]))
   content+='<p>'+link(c['sourceUrl'],'Official directory source')+'</p>'
   page('/courts/'+c['id']+'/',c['name'],f'{c["name"]}: official website, docket portal, local rules, locations and court information. {jurisdiction}.',content,{'@type':'GovernmentOrganization','name':c['name'],'url':c['url']})
- courtlist='<p>Texas state district and appellate courts, federal district courts, and the Fifth Circuit.</p><ul>'+''.join(f'<li><a href="/courts/{e(c["id"])}/">{e(c["name"])}</a> · {e(", ".join(c["counties"]) or c["level"])}</li>' for c in cat['courts'])+'</ul>'
- page('/courts/','Texas court directory','Browse all Texas state district courts, state appellate courts, federal district courts, and the Fifth Circuit.',courtlist)
+ courtlist='<p>Texas Business Court divisions, state district and appellate courts, federal district courts, and the Fifth Circuit.</p><ul>'+''.join(f'<li><a href="/courts/{e(c["id"])}/">{e(c["name"])}</a> · {e(", ".join(c["counties"]) or c["level"])}</li>' for c in cat['courts'])+'</ul>'
+ page('/courts/','Texas court directory','Browse Texas Business Court divisions, state district courts, state appellate courts, federal district courts, and the Fifth Circuit.',courtlist)
  for catname,path,title in [('local','rules','Texas local court rules'),('practice','practice','Federal and Texas civil practice rules')]:
   ds=[d for d in cat['documents'] if d['category']==catname];body='<p><a class="primary" href="/#'+('local' if catname=='local' else 'practice')+'">Search indexed rule text</a></p><ul>'+''.join(f'<li>{link(d["sourceUrl"],d["title"])} · {e(d.get("county") or d.get("jurisdiction") or "")}</li>' for d in ds)+'</ul>';page('/'+path+'/',title,'Official-source links and searchable rule collections for Texas litigation.',body)
  admin=cat['admin'];body='<p>'+link(admin['search_url'],'Search all Texas Administrative Code text')+'</p><ul>'+''.join(f'<li>{link(a["url"],a["name"])} · Title {a["title"]}, Part {a["part"]}</li>' for a in admin['agencies'])+'</ul>';page('/administrative-rules/','Texas administrative agency rules','All Texas Administrative Code titles and agency parts, with official links and statewide rule search.',body)
@@ -37,5 +40,26 @@ def build():
  xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{ORIGIN+u}</loc><lastmod>{news_stamp if u=='/news/' else stamp}</lastmod></url>' for u in urls)+'</urlset>'
  (DIST/'sitemap.xml').write_text(xml);(DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nDisallow: /data/\nSitemap: '+ORIGIN+'/sitemap.xml\n');(DIST/'CNAME').write_text('courtsidetexas.com\n');(DIST/'.nojekyll').touch()
  (DIST/'404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | Courtside Texas</title><link rel="stylesheet" href="/styles.css"><main class="main"><h1>Let’s get you to the right court.</h1><p>This page could not be found.</p><a class="primary" href="/">Search Courtside Texas</a></main></html>')
+ version_assets(DIST)
  print(json.dumps({'pages':len(urls),'courts':len(cat['courts']),'sitemap':'dist/sitemap.xml'}))
+def version_assets(dist):
+ files=['app.js','bio.js','styles.css','news.js','news.css']
+ version=hashlib.sha256(b''.join((dist/name).read_bytes() for name in files)+(ROOT/'public/sw.js').read_bytes()).hexdigest()[:16]
+ mapping={}
+ assets=dist/'assets';assets.mkdir(exist_ok=True)
+ for name in files:
+  source=(dist/name).read_text().replace('__COURTSIDE_RELEASE__',version)
+  (dist/name).write_text(source)
+  digest=hashlib.sha256(source.encode()).hexdigest()[:12]
+  stem,extension=name.rsplit('.',1);target=f'/assets/{stem}.{digest}.{extension}'
+  (dist/target.lstrip('/')).write_text(source);mapping['/'+name]=target
+ for page in dist.rglob('*.html'):
+  content=page.read_text()
+  for old,new in mapping.items():content=content.replace('"'+old+'"','"'+new+'"')
+  page.write_text(content)
+ worker=(dist/'sw.js').read_text().replace('__COURTSIDE_RELEASE__',version)
+ for old,new in mapping.items():worker=worker.replace("'"+old+"'","'"+new+"'")
+ (dist/'sw.js').write_text(worker)
+ (dist/'release.json').write_text(json.dumps({'version':version}))
+
 if __name__=='__main__':build()

@@ -1,0 +1,488 @@
+{
+  "courts": [
+    {
+      "id": "tx-business-1",
+      "name": "Texas Business Court, First Division",
+      "shortName": "Texas Business Court Division 1",
+      "aliases": [
+        "Business courts",
+        "Division 1A",
+        "Division 1B"
+      ],
+      "division": 1,
+      "level": "Business Court",
+      "jurisdiction": "Texas",
+      "cities": [
+        "Dallas",
+        "McKinney"
+      ],
+      "counties": [
+        "Collin",
+        "Dallas",
+        "Ellis",
+        "Fannin",
+        "Grayson",
+        "Kaufman",
+        "Rockwall"
+      ],
+      "judge": "Andrea K. Bouressa; Bill Whitehill",
+      "url": "https://www.txcourts.gov/businesscourt/divisions/first/",
+      "urlStatus": "official",
+      "locations": [
+        {
+          "city": "McKinney",
+          "address": "7300 SH 121, Suite 530, McKinney, Texas 75070",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/first/"
+        },
+        {
+          "city": "Dallas",
+          "address": "6116 N. Central Expwy., Ste. 1090, Dallas, Texas 75206",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/first/"
+        }
+      ],
+      "sourceUrl": "https://www.txcourts.gov/businesscourt/divisions/",
+      "checkedAt": "2026-11-15",
+      "sourceNote": "The Texas Business Court has eleven geographical divisions. Only the First, Third, Fourth, Eighth and Eleventh Divisions are currently operational, with two judges assigned to each.",
+      "docket": {
+        "url": "https://research.txcourts.gov/CourtRecordsSearch/Home",
+        "label": "re:SearchTX",
+        "sourceUrl": "https://www.txcourts.gov/businesscourt/records-hearings-search/",
+        "instructionsUrl": "https://www.txcourts.gov/media/1459072/viewing-the-business-court-docket-on-researchtx.pdf",
+        "access": "A re:SearchTX or existing eFileTexas account is required. Use Advanced Search, Cases, Case Location, then select the Business Court division. Case details include parties, hearings and events; public documents may require payment."
+      },
+      "docketAlternatives": [],
+      "localRulesUrls": [
+        "https://www.txcourts.gov/businesscourt/practice-before-the-court/",
+        "https://www.txcourts.gov/businesscourt/divisions/first/"
+      ],
+      "practiceUrl": "https://www.txcourts.gov/businesscourt/divisions/first/",
+      "ruleDocumentIds": []
+    },
+    {
+      "id": "tx-business-3",
+      "name": "Texas Business Court, Third Division",
+      "shortName": "Texas Business Court Division 3",
+      "aliases": [
+        "Business courts",
+        "Division 3A",
+        "Division 3B"
+      ],
+      "division": 3,
+      "level": "Business Court",
+      "jurisdiction": "Texas",
+      "cities": [
+        "Austin"
+      ],
+      "counties": [
+        "Austin",
+        "Bastrop",
+        "Bell",
+        "Blanco",
+        "Bosque",
+        "Burnet",
+        "Caldwell",
+        "Colorado",
+        "Comal",
+        "Comanche",
+        "Coryell",
+        "Falls",
+        "Fayette",
+        "Gonzales",
+        "Guadalupe",
+        "Hamilton",
+        "Hays",
+        "Hill",
+        "Lampasas",
+        "Lavaca",
+        "Llano",
+        "McLennan",
+        "Milam",
+        "Navarro",
+        "Robertson",
+        "San Saba",
+        "Travis",
+        "Williamson"
+      ],
+      "judge": "Melissa Davis Andrews; Patrick K. Sweeten",
+      "url": "https://www.txcourts.gov/businesscourt/divisions/third/",
+      "urlStatus": "official",
+      "locations": [
+        {
+          "city": "Austin",
+          "address": "",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/third/"
+        },
+        {
+          "city": "Austin",
+          "address": "",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/third/"
+        }
+      ],
+      "sourceUrl": "https://www.txcourts.gov/businesscourt/divisions/",
+      "checkedAt": "2026-11-15",
+      "sourceNote": "The Texas Business Court has eleven geographical divisions. Only the First, Third, Fourth, Eighth and Eleventh Divisions are currently operational, with two judges assigned to each.",
+      "docket": {
+        "url": "https://research.txcourts.gov/CourtRecordsSearch/Home",
+        "label": "re:SearchTX",
+        "sourceUrl": "https://www.txcourts.gov/businesscourt/records-hearings-search/",
+        "instructionsUrl": "https://www.txcourts.gov/media/1459072/viewing-the-business-court-docket-on-researchtx.pdf",
+        "access": "A re:SearchTX or existing eFileTexas account is required. Use Advanced Search, Cases, Case Location, then select the Business Court division. Case details include parties, hearings and events; public documents may require payment."
+      },
+      "docketAlternatives": [],
+      "localRulesUrls": [
+        "https://www.txcourts.gov/businesscourt/practice-before-the-court/",
+        "https://www.txcourts.gov/businesscourt/divisions/third/"
+      ],
+      "practiceUrl": "https://www.txcourts.gov/businesscourt/divisions/third/",
+      "ruleDocumentIds": []
+    },
+    {
+      "id": "tx-business-4",
+      "name": "Texas Business Court, Fourth Division",
+      "shortName": "Texas Business Court Division 4",
+      "aliases": [
+        "Business courts",
+        "Division 4A",
+        "Division 4B"
+      ],
+      "division": 4,
+      "level": "Business Court",
+      "jurisdiction": "Texas",
+      "cities": [
+        "San Antonio"
+      ],
+      "counties": [
+        "Aransas",
+        "Atascosa",
+        "Bee",
+        "Bexar",
+        "Calhoun",
+        "DeWitt",
+        "Dimmit",
+        "Frio",
+        "Goliad",
+        "Jackson",
+        "Karnes",
+        "La Salle",
+        "Live Oak",
+        "Maverick",
+        "McMullen",
+        "Refugio",
+        "San Patricio",
+        "Victoria",
+        "Webb",
+        "Wilson",
+        "Zapata",
+        "Zavala"
+      ],
+      "judge": "Marialyn Barnard; Stacy Sharp",
+      "url": "https://www.txcourts.gov/businesscourt/divisions/fourth/",
+      "urlStatus": "official",
+      "locations": [
+        {
+          "city": "San Antonio",
+          "address": "",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/fourth/"
+        },
+        {
+          "city": "San Antonio",
+          "address": "",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/fourth/"
+        }
+      ],
+      "sourceUrl": "https://www.txcourts.gov/businesscourt/divisions/",
+      "checkedAt": "2026-11-15",
+      "sourceNote": "The Texas Business Court has eleven geographical divisions. Only the First, Third, Fourth, Eighth and Eleventh Divisions are currently operational, with two judges assigned to each.",
+      "docket": {
+        "url": "https://research.txcourts.gov/CourtRecordsSearch/Home",
+        "label": "re:SearchTX",
+        "sourceUrl": "https://www.txcourts.gov/businesscourt/records-hearings-search/",
+        "instructionsUrl": "https://www.txcourts.gov/media/1459072/viewing-the-business-court-docket-on-researchtx.pdf",
+        "access": "A re:SearchTX or existing eFileTexas account is required. Use Advanced Search, Cases, Case Location, then select the Business Court division. Case details include parties, hearings and events; public documents may require payment."
+      },
+      "docketAlternatives": [],
+      "localRulesUrls": [
+        "https://www.txcourts.gov/businesscourt/practice-before-the-court/",
+        "https://www.txcourts.gov/businesscourt/divisions/fourth/"
+      ],
+      "practiceUrl": "https://www.txcourts.gov/businesscourt/divisions/fourth/",
+      "ruleDocumentIds": []
+    },
+    {
+      "id": "tx-business-8",
+      "name": "Texas Business Court, Eighth Division",
+      "shortName": "Texas Business Court Division 8",
+      "aliases": [
+        "Business courts",
+        "Division 8A",
+        "Division 8B"
+      ],
+      "division": 8,
+      "level": "Business Court",
+      "jurisdiction": "Texas",
+      "cities": [
+        "Fort Worth"
+      ],
+      "counties": [
+        "Archer",
+        "Clay",
+        "Cooke",
+        "Denton",
+        "Eastland",
+        "Erath",
+        "Hood",
+        "Jack",
+        "Johnson",
+        "Montague",
+        "Palo Pinto",
+        "Parker",
+        "Somervell",
+        "Stephens",
+        "Tarrant",
+        "Wichita",
+        "Wise",
+        "Young"
+      ],
+      "judge": "Jerry D. Bullard; Brian Stagner",
+      "url": "https://www.txcourts.gov/businesscourt/divisions/eighth/",
+      "urlStatus": "official",
+      "locations": [
+        {
+          "city": "Fort Worth",
+          "address": "1515 Commerce Street, Suite 170, Fort Worth, TX 76102",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/eighth/"
+        },
+        {
+          "city": "Fort Worth",
+          "address": "1515 Commerce Street, Suite 170, Fort Worth, TX 76102",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/eighth/"
+        }
+      ],
+      "sourceUrl": "https://www.txcourts.gov/businesscourt/divisions/",
+      "checkedAt": "2026-11-15",
+      "sourceNote": "The Texas Business Court has eleven geographical divisions. Only the First, Third, Fourth, Eighth and Eleventh Divisions are currently operational, with two judges assigned to each.",
+      "docket": {
+        "url": "https://research.txcourts.gov/CourtRecordsSearch/Home",
+        "label": "re:SearchTX",
+        "sourceUrl": "https://www.txcourts.gov/businesscourt/records-hearings-search/",
+        "instructionsUrl": "https://www.txcourts.gov/media/1459072/viewing-the-business-court-docket-on-researchtx.pdf",
+        "access": "A re:SearchTX or existing eFileTexas account is required. Use Advanced Search, Cases, Case Location, then select the Business Court division. Case details include parties, hearings and events; public documents may require payment."
+      },
+      "docketAlternatives": [],
+      "localRulesUrls": [
+        "https://www.txcourts.gov/businesscourt/practice-before-the-court/",
+        "https://www.txcourts.gov/businesscourt/divisions/eighth/"
+      ],
+      "practiceUrl": "https://www.txcourts.gov/businesscourt/divisions/eighth/",
+      "ruleDocumentIds": []
+    },
+    {
+      "id": "tx-business-11",
+      "name": "Texas Business Court, Eleventh Division",
+      "shortName": "Texas Business Court Division 11",
+      "aliases": [
+        "Business courts",
+        "Division 11A",
+        "Division 11B"
+      ],
+      "division": 11,
+      "level": "Business Court",
+      "jurisdiction": "Texas",
+      "cities": [
+        "Houston"
+      ],
+      "counties": [
+        "Brazoria",
+        "Fort Bend",
+        "Galveston",
+        "Harris",
+        "Matagorda",
+        "Montgomery",
+        "Wharton"
+      ],
+      "judge": "Sofia Adrogué; Grant Dorfman",
+      "url": "https://www.txcourts.gov/businesscourt/divisions/eleventh/",
+      "urlStatus": "official",
+      "locations": [
+        {
+          "city": "Houston",
+          "address": "301 Fannin Street, Houston, Texas 77002",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/eleventh/"
+        },
+        {
+          "city": "Houston",
+          "address": "301 Fannin Street, Houston, Texas 77002",
+          "url": "https://www.txcourts.gov/businesscourt/divisions/eleventh/"
+        }
+      ],
+      "sourceUrl": "https://www.txcourts.gov/businesscourt/divisions/",
+      "checkedAt": "2026-11-15",
+      "sourceNote": "The Texas Business Court has eleven geographical divisions. Only the First, Third, Fourth, Eighth and Eleventh Divisions are currently operational, with two judges assigned to each.",
+      "docket": {
+        "url": "https://research.txcourts.gov/CourtRecordsSearch/Home",
+        "label": "re:SearchTX",
+        "sourceUrl": "https://www.txcourts.gov/businesscourt/records-hearings-search/",
+        "instructionsUrl": "https://www.txcourts.gov/media/1459072/viewing-the-business-court-docket-on-researchtx.pdf",
+        "access": "A re:SearchTX or existing eFileTexas account is required. Use Advanced Search, Cases, Case Location, then select the Business Court division. Case details include parties, hearings and events; public documents may require payment."
+      },
+      "docketAlternatives": [],
+      "localRulesUrls": [
+        "https://www.txcourts.gov/businesscourt/practice-before-the-court/",
+        "https://www.txcourts.gov/businesscourt/divisions/eleventh/"
+      ],
+      "practiceUrl": "https://www.txcourts.gov/businesscourt/divisions/eleventh/",
+      "ruleDocumentIds": []
+    }
+  ],
+  "documents": [
+    {
+      "title": "Texas Business Court: Judge Bouressa's Court Procedures (rev. 4.26)",
+      "id": "business-1-procedure-1",
+      "sourcePage": "https://www.txcourts.gov/businesscourt/divisions/first/",
+      "courtIds": [
+        "tx-business-1"
+      ],
+      "documentType": "Court Procedures",
+      "category": "local",
+      "jurisdiction": "Texas",
+      "courtGroup": "Business Court",
+      "sourceUrl": "https://www.txcourts.gov/media/1462505/first-division-court-procedures-judge-bouressa-rev-for-20260401.pdf",
+      "status": "link-only",
+      "text": "",
+      "checkedAt": "2026-11-15",
+      "note": "Latest retrieval: Official source link; retrieval pending"
+    },
+    {
+      "title": "Texas Business Court: Judge Whitehill's Guidelines (rev. 5-28-26)",
+      "id": "business-1-procedure-2",
+      "sourcePage": "https://www.txcourts.gov/businesscourt/divisions/first/",
+      "courtIds": [
+        "tx-business-1"
+      ],
+      "documentType": "Court Procedures",
+      "category": "local",
+      "jurisdiction": "Texas",
+      "courtGroup": "Business Court",
+      "sourceUrl": "https://www.txcourts.gov/media/1462781/judge-whitehills-guidelines-rev-5-28-26.pdf",
+      "status": "link-only",
+      "text": "",
+      "checkedAt": "2026-11-15",
+      "note": "Latest retrieval: Official source link; retrieval pending"
+    },
+    {
+      "title": "Texas Business Court: Third Division Court Procedures (rev. 7.26)",
+      "id": "business-3-procedure-1",
+      "sourcePage": "https://www.txcourts.gov/businesscourt/divisions/third/",
+      "courtIds": [
+        "tx-business-3"
+      ],
+      "documentType": "Court Procedures",
+      "category": "local",
+      "jurisdiction": "Texas",
+      "courtGroup": "Business Court",
+      "sourceUrl": "https://www.txcourts.gov/media/1463028/third-division-court-procedures-72026.pdf",
+      "status": "link-only",
+      "text": "",
+      "checkedAt": "2026-11-15",
+      "note": "Latest retrieval: Official source link; retrieval pending"
+    },
+    {
+      "title": "Texas Business Court: Judge Bullard Specific Procedures (rev. 4/26)",
+      "id": "business-8-procedure-1",
+      "sourcePage": "https://www.txcourts.gov/businesscourt/divisions/eighth/",
+      "courtIds": [
+        "tx-business-8"
+      ],
+      "documentType": "Court Procedures",
+      "category": "local",
+      "jurisdiction": "Texas",
+      "courtGroup": "Business Court",
+      "sourceUrl": "https://www.txcourts.gov/media/1462507/judge-bullard-specific-procedures-260402.pdf",
+      "status": "link-only",
+      "text": "",
+      "checkedAt": "2026-11-15",
+      "note": "Latest retrieval: Official source link; retrieval pending"
+    },
+    {
+      "title": "Texas Business Court: Judge Stagner Specific Requirements (rev. 4/26)",
+      "id": "business-8-procedure-2",
+      "sourcePage": "https://www.txcourts.gov/businesscourt/divisions/eighth/",
+      "courtIds": [
+        "tx-business-8"
+      ],
+      "documentType": "Court Procedures",
+      "category": "local",
+      "jurisdiction": "Texas",
+      "courtGroup": "Business Court",
+      "sourceUrl": "https://www.txcourts.gov/media/1462503/judge-stagner-specific-requirements_04012026.pdf",
+      "status": "link-only",
+      "text": "",
+      "checkedAt": "2026-11-15",
+      "note": "Latest retrieval: Official source link; retrieval pending"
+    },
+    {
+      "title": "Texas Business Court: Eleventh Division: Towards Trial By Agreement",
+      "id": "business-11-procedure-1",
+      "sourcePage": "https://www.txcourts.gov/businesscourt/divisions/eleventh/",
+      "courtIds": [
+        "tx-business-11"
+      ],
+      "documentType": "Court Procedures",
+      "category": "local",
+      "jurisdiction": "Texas",
+      "courtGroup": "Business Court",
+      "sourceUrl": "https://www.txcourts.gov/media/1459755/texas-business-court-eleventh-division-trial-by-agreement.pdf",
+      "status": "link-only",
+      "text": "",
+      "checkedAt": "2026-11-15",
+      "note": "Latest retrieval: Official source link; retrieval pending"
+    },
+    {
+      "title": "Local Rules of the Texas Business Court",
+      "effectiveDate": "2026-10-01",
+      "id": "business-local-rules",
+      "sourcePage": "https://www.txcourts.gov/businesscourt/practice-before-the-court/",
+      "courtIds": [
+        "tx-business-1",
+        "tx-business-3",
+        "tx-business-4",
+        "tx-business-8",
+        "tx-business-11"
+      ],
+      "documentType": "Local Rules",
+      "category": "local",
+      "jurisdiction": "Texas",
+      "courtGroup": "Business Court",
+      "sourceUrl": "https://www.txcourts.gov/media/1463407/tbc-local-rules-10126-with-signatures.pdf",
+      "status": "link-only",
+      "text": "",
+      "checkedAt": "2026-11-15",
+      "note": "Latest retrieval: Official source link; retrieval pending"
+    },
+    {
+      "title": "Local Rules of Administration for the Texas Business Court",
+      "effectiveDate": "2026-07-01",
+      "id": "business-admin-rules",
+      "sourcePage": "https://www.txcourts.gov/businesscourt/practice-before-the-court/",
+      "courtIds": [
+        "tx-business-1",
+        "tx-business-3",
+        "tx-business-4",
+        "tx-business-8",
+        "tx-business-11"
+      ],
+      "documentType": "Local Rules",
+      "category": "local",
+      "jurisdiction": "Texas",
+      "courtGroup": "Business Court",
+      "sourceUrl": "https://www.txcourts.gov/media/1462993/local-administrative-rules-7126-final-with-signatures.pdf",
+      "status": "link-only",
+      "text": "",
+      "checkedAt": "2026-11-15",
+      "note": "Latest retrieval: Official source link; retrieval pending"
+    }
+  ],
+  "checkedAt": "2026-11-15T22:19:38.390594+00:00",
+  "directoryVerifiedAt": "2026-11-15",
+  "statusNote": "The Texas Business Court has eleven geographical divisions. Only the First, Third, Fourth, Eighth and Eleventh Divisions are currently operational, with two judges assigned to each."
+}

@@ -17,6 +17,8 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Install public document tools
         run: sudo apt-get update && sudo apt-get install -y poppler-utils tesseract-ocr
       - uses: actions/cache@v4

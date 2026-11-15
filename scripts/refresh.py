@@ -1,7 +1,7 @@
 """Unattended weekly refresh; publication happens only after validation succeeds."""
 import pathlib,sys,json,gzip,shutil,subprocess,datetime,importlib.util
 ROOT=pathlib.Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'));sys.path.insert(0,str(ROOT/'scripts'/'ingest'))
-import state_courts,admin,federal,local_rules,ocr,assemble
+import state_courts,admin,federal,local_rules,ocr,assemble,business
 
 def restore():
  p=ROOT/'public'/'data'/'catalog.json.gz';old=json.loads(gzip.decompress(p.read_bytes()));texts={}
@@ -26,7 +26,7 @@ def run():
  try:result=admin.get_directory(ROOT/'work'/'admin');(ROOT/'data'/'administrative.json').write_text(json.dumps(result))
  except Exception as e:
   a=old['admin'];a['refreshError']=str(e);(ROOT/'data'/'administrative.json').write_text(json.dumps(a));print('TAC directory retained after failed refresh:',str(e))
- federal.run();local_rules.main();ocr.main();assemble.run()
+ federal.run();local_rules.main();ocr.main();assemble.run();business.run()
  backup.with_suffix('.json.gz').write_bytes(gzip.compress(backup.read_bytes(),mtime=0))
  print('Refresh complete:',datetime.datetime.now(datetime.timezone.utc).isoformat())
 if __name__=='__main__':run()

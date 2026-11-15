@@ -1,0 +1,302 @@
+{
+  "verifiedDate": "2026-11-15",
+  "sourceUrl": "https://www.txcourts.gov/businesscourt/",
+  "divisionSourceUrl": "https://www.txcourts.gov/businesscourt/divisions/",
+  "locationSourceUrl": "https://www.txcourts.gov/businesscourt/about-the-court/",
+  "countySourceUrl": "https://www.txcourts.gov/media/1461707/texas-business-court-divisions-by-county-hb40-hb16-2025v2.pdf",
+  "countyMapEffectiveDate": "2025-12-04",
+  "statusNote": "The Texas Business Court has eleven geographical divisions. Only the First, Third, Fourth, Eighth and Eleventh Divisions are currently operational, with two judges assigned to each.",
+  "nonOperationalDivisions": [
+    2,
+    5,
+    6,
+    7,
+    9,
+    10
+  ],
+  "rulesPage": "https://www.txcourts.gov/businesscourt/practice-before-the-court/",
+  "docket": {
+    "url": "https://research.txcourts.gov/CourtRecordsSearch/Home",
+    "label": "re:SearchTX",
+    "sourceUrl": "https://www.txcourts.gov/businesscourt/records-hearings-search/",
+    "instructionsUrl": "https://www.txcourts.gov/media/1459072/viewing-the-business-court-docket-on-researchtx.pdf",
+    "access": "A re:SearchTX or existing eFileTexas account is required. Use Advanced Search, Cases, Case Location, then select the Business Court division. Case details include parties, hearings and events; public documents may require payment."
+  },
+  "divisions": [
+    {
+      "number": 1,
+      "name": "Texas Business Court, First Division",
+      "cities": [
+        "Dallas",
+        "McKinney"
+      ],
+      "judges": [
+        "Andrea K. Bouressa",
+        "Bill Whitehill"
+      ],
+      "url": "https://www.txcourts.gov/businesscourt/divisions/first/",
+      "counties": [
+        "Collin",
+        "Dallas",
+        "Ellis",
+        "Fannin",
+        "Grayson",
+        "Kaufman",
+        "Rockwall"
+      ],
+      "locations": [
+        {
+          "judge": "Andrea K. Bouressa",
+          "division": "1A",
+          "address": "7300 SH 121, Suite 530, McKinney, Texas 75070",
+          "email": "BCDivision1A@txcourts.gov",
+          "phone": "(945) 495-1716"
+        },
+        {
+          "judge": "Bill Whitehill",
+          "division": "1B",
+          "address": "6116 N. Central Expwy., Ste. 1090, Dallas, Texas 75206",
+          "email": "BCDivision1B@txcourts.gov",
+          "phone": "(945) 495-1718"
+        }
+      ],
+      "procedures": [
+        {
+          "title": "Judge Bouressa's Court Procedures (rev. 4.26)",
+          "url": "https://www.txcourts.gov/media/1462505/first-division-court-procedures-judge-bouressa-rev-for-20260401.pdf"
+        },
+        {
+          "title": "Judge Whitehill's Guidelines (rev. 5-28-26)",
+          "url": "https://www.txcourts.gov/media/1462781/judge-whitehills-guidelines-rev-5-28-26.pdf"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Texas Business Court, Third Division",
+      "cities": [
+        "Austin"
+      ],
+      "judges": [
+        "Melissa Davis Andrews",
+        "Patrick K. Sweeten"
+      ],
+      "url": "https://www.txcourts.gov/businesscourt/divisions/third/",
+      "counties": [
+        "Austin",
+        "Bastrop",
+        "Bell",
+        "Blanco",
+        "Bosque",
+        "Burnet",
+        "Caldwell",
+        "Colorado",
+        "Comal",
+        "Comanche",
+        "Coryell",
+        "Falls",
+        "Fayette",
+        "Gonzales",
+        "Guadalupe",
+        "Hamilton",
+        "Hays",
+        "Hill",
+        "Lampasas",
+        "Lavaca",
+        "Llano",
+        "McLennan",
+        "Milam",
+        "Navarro",
+        "Robertson",
+        "San Saba",
+        "Travis",
+        "Williamson"
+      ],
+      "locations": [
+        {
+          "judge": "Melissa Davis Andrews",
+          "division": "3A",
+          "email": "BCDivision3A@txcourts.gov",
+          "phone": "(512) 463-1589"
+        },
+        {
+          "judge": "Patrick K. Sweeten",
+          "division": "3B",
+          "email": "BCDivision3B@txcourts.gov",
+          "phone": "(512) 463-1589"
+        }
+      ],
+      "procedures": [
+        {
+          "title": "Third Division Court Procedures (rev. 7.26)",
+          "url": "https://www.txcourts.gov/media/1463028/third-division-court-procedures-72026.pdf"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Texas Business Court, Fourth Division",
+      "cities": [
+        "San Antonio"
+      ],
+      "judges": [
+        "Marialyn Barnard",
+        "Stacy Sharp"
+      ],
+      "url": "https://www.txcourts.gov/businesscourt/divisions/fourth/",
+      "counties": [
+        "Aransas",
+        "Atascosa",
+        "Bee",
+        "Bexar",
+        "Calhoun",
+        "DeWitt",
+        "Dimmit",
+        "Frio",
+        "Goliad",
+        "Jackson",
+        "Karnes",
+        "La Salle",
+        "Live Oak",
+        "Maverick",
+        "McMullen",
+        "Refugio",
+        "San Patricio",
+        "Victoria",
+        "Webb",
+        "Wilson",
+        "Zapata",
+        "Zavala"
+      ],
+      "locations": [
+        {
+          "judge": "Marialyn Barnard",
+          "division": "4A",
+          "email": "BCDivision4A@txcourts.gov",
+          "phone": "(210) 903-1969"
+        },
+        {
+          "judge": "Stacy Sharp",
+          "division": "4B",
+          "email": "BCDivision4B@txcourts.gov",
+          "phone": "(210) 903-1954"
+        }
+      ],
+      "procedures": [],
+      "proceduresNote": "Official division page lists forms and templates but no separate Court Procedures section. Statewide local and administrative rules apply; link division page for current guidance."
+    },
+    {
+      "number": 8,
+      "name": "Texas Business Court, Eighth Division",
+      "cities": [
+        "Fort Worth"
+      ],
+      "judges": [
+        "Jerry D. Bullard",
+        "Brian Stagner"
+      ],
+      "url": "https://www.txcourts.gov/businesscourt/divisions/eighth/",
+      "counties": [
+        "Archer",
+        "Clay",
+        "Cooke",
+        "Denton",
+        "Eastland",
+        "Erath",
+        "Hood",
+        "Jack",
+        "Johnson",
+        "Montague",
+        "Palo Pinto",
+        "Parker",
+        "Somervell",
+        "Stephens",
+        "Tarrant",
+        "Wichita",
+        "Wise",
+        "Young"
+      ],
+      "locations": [
+        {
+          "judge": "Jerry D. Bullard",
+          "division": "8A",
+          "address": "1515 Commerce Street, Suite 170, Fort Worth, TX 76102",
+          "email": "BCDivision8A@txcourts.gov",
+          "phone": "(817) 618-6873"
+        },
+        {
+          "judge": "Brian Stagner",
+          "division": "8B",
+          "address": "1515 Commerce Street, Suite 170, Fort Worth, TX 76102",
+          "email": "BCDivision8B@txcourts.gov",
+          "phone": "(817) 618-9028"
+        }
+      ],
+      "procedures": [
+        {
+          "title": "Judge Bullard Specific Procedures (rev. 4/26)",
+          "url": "https://www.txcourts.gov/media/1462507/judge-bullard-specific-procedures-260402.pdf"
+        },
+        {
+          "title": "Judge Stagner Specific Requirements (rev. 4/26)",
+          "url": "https://www.txcourts.gov/media/1462503/judge-stagner-specific-requirements_04012026.pdf"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "name": "Texas Business Court, Eleventh Division",
+      "cities": [
+        "Houston"
+      ],
+      "judges": [
+        "Sofia Adrogué",
+        "Grant Dorfman"
+      ],
+      "url": "https://www.txcourts.gov/businesscourt/divisions/eleventh/",
+      "counties": [
+        "Brazoria",
+        "Fort Bend",
+        "Galveston",
+        "Harris",
+        "Matagorda",
+        "Montgomery",
+        "Wharton"
+      ],
+      "locations": [
+        {
+          "judge": "Sofia Adrogué",
+          "division": "11A",
+          "address": "301 Fannin Street, Houston, Texas 77002",
+          "email": "BCDivision11A@txcourts.gov",
+          "phone": "(713) 274-1067"
+        },
+        {
+          "judge": "Grant Dorfman",
+          "division": "11B",
+          "address": "301 Fannin Street, Houston, Texas 77002",
+          "email": "BCDivision11B@txcourts.gov",
+          "phone": "(713) 274-1069"
+        }
+      ],
+      "procedures": [
+        {
+          "title": "Eleventh Division: Towards Trial By Agreement",
+          "url": "https://www.txcourts.gov/media/1459755/texas-business-court-eleventh-division-trial-by-agreement.pdf"
+        }
+      ]
+    }
+  ],
+  "statewideRules": [
+    {
+      "title": "Local Rules of the Texas Business Court",
+      "url": "https://www.txcourts.gov/media/1463407/tbc-local-rules-10126-with-signatures.pdf",
+      "effectiveDate": "2026-10-01"
+    },
+    {
+      "title": "Local Rules of Administration for the Texas Business Court",
+      "url": "https://www.txcourts.gov/media/1462993/local-administrative-rules-7126-final-with-signatures.pdf",
+      "effectiveDate": "2026-07-01"
+    }
+  ]
+}
