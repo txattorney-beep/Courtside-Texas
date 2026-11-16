@@ -1,7 +1,8 @@
-name: Daily legal news refresh
+name: Twice-daily legal news refresh
 on:
   schedule:
-    - cron: '0 13 * * *'
+    # 07:30 and 16:30 CST (UTC-6), every day.
+    - cron: '30 13,22 * * *'
   push:
     branches: [main]
     paths: ['scripts/refresh_news.py', '.github/workflows/news-refresh.yml', 'public/data/news-seed.json']
