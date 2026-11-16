@@ -40,7 +40,7 @@ python3 scripts/validate.py
 
 Official documents control. Rule-document metadata and retrieval status are shown separately from the document's effective date. OCA's repository does not establish that every court-specific practice or judge-specific order has been captured. Nine new district courts currently have no website listed in CARD, so their links lead to the official directory. Docket buttons open official portals; they do not bypass accounts, fees, access restrictions, or sealed records. re:SearchTX civil coverage varies; named criminal district courts use county criminal-record access instead.
 
-The directory is an independent reference, not legal advice or an official court publication. No copyright is asserted over public-domain government rules. Original branding and editorial site content © Eric A. Hudson. External links do not imply endorsement.
+The directory is an independent reference, not legal advice or an official court publication. No copyright is asserted over public-domain government rules. Copyright notices apply only to protectable authorship; see `docs/DESIGN.md` for AI-assisted design provenance and limitations. External links do not imply endorsement.
 
 ## Search engines
 
@@ -60,3 +60,7 @@ The biography in `public/biography.html` emphasizes the general and commercial l
 Business Court coverage includes the five operational divisions (1, 3, 4, 8 and 11), with official division pages, counties, judges, re:SearchTX docket access, current statewide rules and division procedures. The directory source is `data/business-court-sources.json`; `scripts/ingest/business.py` refreshes rule links and text during publication and weekly updates. Failed retrievals retain prior text with a status label. `scripts/business_catalog.py` merges this coverage into every generated catalog, court page and portable download.
 
 Builds fingerprint CSS and JavaScript filenames and version the offline cache. Legal News is a normal link in the sidebar, top bar and static reference pages. Open tabs do not reload themselves. Updates arrive on the next normal navigation or refresh. The Worker returns a disabled release-check response for compatibility with older open tabs, preventing version mismatches from interrupting a visitor.
+
+## Visual identity
+
+The editorial field-guide identity uses an editable gavel/C monogram, paper and ink colors, brick accents, numbered navigation, and ruled court listings. The source and authorship limitations are documented in `docs/DESIGN.md`. Desktop and phone navigation share the same court, rule, news, records, and saved-court functions.
