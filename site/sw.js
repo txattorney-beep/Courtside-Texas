@@ -1,6 +1,6 @@
 /* Cache the pocket directory for offline access; prefer live sources when online. */
-const CACHE='courtside-90898e72bfd0dae3';
-const SHELL=['/','/assets/app.df498f0bb3c2.js','/assets/search-engine.b113c7630c34.js','/assets/bio.47077794217d.js','/assets/styles.1a787373d5f1.css','/brand-mark.svg','/favicon.svg','/data/catalog.json.gz','/offline-template.html'];
+const CACHE='courtside-acad5d7778f0225e';
+const SHELL=['/','/assets/app.df498f0bb3c2.js','/assets/search-engine.b113c7630c34.js','/assets/bio.47077794217d.js','/assets/styles.62ec0065e697.css','/brand-mark.svg','/favicon.svg','/data/catalog.json.gz','/offline-template.html'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('courtside-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
