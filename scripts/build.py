@@ -34,7 +34,15 @@ def build():
   content+='<h2>Court locations</h2>'+''.join(f'<p><strong>{e(l.get("county") or l.get("city") or "Location")}</strong><br>{e(l.get("address", ""))}<br>{e(l.get("city", ""))}, TX {e(l.get("zip", ""))}<br>{link(l["url"],"Location website") if l.get("url") else ""}</p>' for l in c.get('locations',[]))
   content+='<p>'+link(c['sourceUrl'],'Official directory source')+'</p>'
   page('/courts/'+c['id']+'/',c['name'],f'{c["name"]}: official website, docket portal, local rules, locations and court information. {jurisdiction}.',content,{'@type':'GovernmentOrganization','name':c['name'],'url':c['url']})
- courtlist=quick_links()+'<p>Texas Business Court divisions, state district and appellate courts, federal district courts, and the Fifth Circuit.</p><ul>'+''.join(f'<li><a href="/courts/{e(c["id"])}/">{e(c["name"])}</a> · {e(", ".join(c["counties"]) or c["level"])}</li>' for c in cat['courts'])+'</ul>'
+ groups=[('appellate','Appellate courts',['State appellate','Federal appellate']),('district','District courts',['Federal district','State district']),('business','Business Court',['Business Court'])]
+ courtlist=quick_links()+'<p>Browse by court category. State and federal courts are grouped together by function.</p><nav class="reference-category-tabs" aria-label="Court categories">'+''.join(f'<a href="#{key}">{label}</a>' for key,label,levels in groups)+'</nav>'
+ for key,label,levels in groups:
+  courtlist+=f'<section id="{key}" style="scroll-margin-top:20px"><h2>{label}</h2>'
+  for level in levels:
+   members=sorted([c for c in cat['courts'] if c['level']==level],key=lambda c:c['name'])
+   if not members: continue
+   courtlist+=f'<h3>{"Fifth Circuit" if level=="Federal appellate" else level+" courts"}</h3><ul>'+''.join(f'<li><a href="/courts/{e(c["id"])}/">{e(c["name"])}</a> · {e(", ".join(c["counties"]) or c["level"])}</li>' for c in members)+'</ul>'
+  courtlist+='</section>'
  page('/courts/','Texas court directory','Browse Texas Business Court divisions, state district courts, state appellate courts, federal district courts, and the Fifth Circuit.',courtlist)
  for catname,path,title in [('local','rules','Texas local court rules'),('practice','practice','Federal and Texas civil practice rules')]:
   ds=[d for d in cat['documents'] if d['category']==catname];body='<p><a class="primary" href="/#'+('local' if catname=='local' else 'practice')+'">Search indexed rule text</a></p><ul>'+''.join(f'<li>{link(d["sourceUrl"],d["title"])} · {e(d.get("county") or d.get("jurisdiction") or "")}</li>' for d in ds)+'</ul>';page('/'+path+'/',title,'Official-source links and searchable rule collections for Texas litigation.',body)
