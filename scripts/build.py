@@ -81,7 +81,7 @@ def sitemap_dates(urls,dist,previous):
 
 def version_assets(dist):
  built_at=datetime.datetime.now(datetime.timezone.utc).isoformat()
- files=['search-engine.js','search.js','search.css','app.js','bio.js','styles.css','news.js','news.css']
+ files=['share.js','share.css','search-engine.js','search.js','search.css','app.js','bio.js','styles.css','news.js','news.css']
  version=hashlib.sha256(b''.join((dist/name).read_bytes() for name in files)+(ROOT/'public/sw.js').read_bytes()).hexdigest()[:16]
  mapping={}
  assets=dist/'assets';assets.mkdir(exist_ok=True)
@@ -94,6 +94,7 @@ def version_assets(dist):
   (dist/target.lstrip('/')).write_text(source);mapping['/'+name]=target
  for page in dist.rglob('*.html'):
   content=page.read_text()
+  content=content.replace('</head>','<link rel="stylesheet" href="/share.css"><script src="/share.js" defer></script></head>')
   for old,new in mapping.items():content=content.replace('"'+old+'"','"'+new+'"')
   page.write_text(content)
  worker=(dist/'sw.js').read_text().replace('__COURTSIDE_RELEASE__',version)
