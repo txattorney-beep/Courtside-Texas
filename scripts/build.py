@@ -55,8 +55,7 @@ def build():
   'Inquire about sponsorship opportunities on Courtside Texas and The Legal Wire.',
   '<p class="lead">Reach readers who follow Texas courts and Fifth Circuit legal news.</p>'
   '<p>Contact Eric Hudson for sponsorship details, available placements, and rates.</p>'
-  '<p><a class="primary" href="mailto:txattorney@gmail.com?subject=Courtside%20Texas%20sponsorship%20inquiry">Email Eric about sponsorship</a></p>'
-  '<p>Write to txattorney@gmail.com.</p>',
+  '<p><a class="primary" href="mailto:txattorney@gmail.com?subject=Courtside%20Texas%20sponsorship%20inquiry">Email Eric about sponsorship</a></p>',
   show_search=False,
  )
  from news_page import build_news_page
