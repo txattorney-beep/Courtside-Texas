@@ -2,12 +2,13 @@
 import datetime as dt,email.utils,html,json,pathlib,re,urllib.request,urllib.parse,xml.etree.ElementTree as ET,concurrent.futures
 ROOT=pathlib.Path(__file__).resolve().parents[1];DATA=ROOT/'public/data';UA='CourtsideTexas/1.0 (+https://courtsidetexas.com; public news links)'
 FEEDS=[
+ {'name':'Courthouse News Service','url':'https://www.courthousenews.com/feed/','category':'Texas','kind':'Reporting','filter':r'\b(Texas|Texan|Houston|Dallas|Austin|San Antonio|El Paso|Fort Worth|Fifth Circuit|5th Circuit)\b','domains':['courthousenews.com']},
  {'name':'The Texas Tribune','url':'https://feeds.texastribune.org/feeds/main/','category':'Texas','kind':'Reporting','filter':r'\b(court|courts|lawsuit|lawsuits|judge|judges|attorney|legal|litigation|ruling|injunction|appeals?|justices?|judicial|prosecutor|prosecution|indictment|sentenc\w+|jury)\b','domains':['texastribune.org']},
  {'name':'State Bar of Texas','url':'https://blog.texasbar.com/feed/','category':'Practice','kind':'Bar news','domains':['blog.texasbar.com']},
  {'name':'U.S. Court of Appeals for the Fifth Circuit','url':'https://www.ca5.uscourts.gov/feeds/opinions','category':'Fifth Circuit','kind':'Opinion','domains':['ca5.uscourts.gov']},
  {'name':'U.S. Court of Appeals for the Fifth Circuit','url':'https://www.ca5.uscourts.gov/feeds/news','category':'Fifth Circuit','kind':'Court announcement','domains':['ca5.uscourts.gov']}
 ]
-SOURCES=[{'name':n,'url':u} for n,u in [('Fifth Circuit opinions','https://www.ca5.uscourts.gov/opinions'),('Supreme Court of Texas','https://www.txcourts.gov/supreme/orders-opinions/'),('Court of Criminal Appeals','https://www.txcourts.gov/cca/opinions/'),('The Texas Tribune','https://www.texastribune.org/'),('Texas Public Radio','https://www.tpr.org/'),('Texas Bar Blog','https://blog.texasbar.com/'),('Texas Lawyer','https://www.law.com/texaslawyer/'),('The Texas Lawbook','https://texaslawbook.net/'),('How Appealing','https://howappealing.abovethelaw.com/')]]
+SOURCES=[{'name':n,'url':u} for n,u in [('Fifth Circuit opinions','https://www.ca5.uscourts.gov/opinions'),('Supreme Court of Texas','https://www.txcourts.gov/supreme/orders-opinions/'),('Court of Criminal Appeals','https://www.txcourts.gov/cca/opinions/'),('Courthouse News Service','https://www.courthousenews.com/'),('The Texas Tribune','https://www.texastribune.org/'),('Texas Public Radio','https://www.tpr.org/'),('Texas Bar Blog','https://blog.texasbar.com/'),('Texas Lawyer','https://www.law.com/texaslawyer/'),('The Texas Lawbook','https://texaslawbook.net/'),('How Appealing','https://howappealing.abovethelaw.com/')]]
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]+>',' ',s or ''))).strip()
 def canonical(url):
  p=urllib.parse.urlsplit(url);q=urllib.parse.parse_qsl(p.query)
@@ -41,7 +42,7 @@ def collect(source,now):
    if not any(host==d or host.endswith('.'+d) for d in source['domains']):continue
    kind=source['kind']
    if kind=='Opinion':kind='Unpublished opinion' if '/unpub/' in url else 'Published opinion' if '/pub/' in url else 'Court opinion'
-   records.append({'title':title,'url':canonical(url),'publisher':source['name'],'date':published.date().isoformat(),'category':source['category'],'kind':kind})
+   records.append({'title':title,'url':canonical(url),'publisher':source['name'],'date':published.date().isoformat(),'category':('Fifth Circuit' if source['name']=='Courthouse News Service' and re.search(r'\b(Fifth|5th) Circuit\b',title+' '+description,re.I) else source['category']),'kind':kind})
   status.update(success=True,items=len(records))
  except Exception as error:status.update(success=False,error=str(error)[:200])
  return records,status
