@@ -120,14 +120,14 @@
         "txnd"
       ],
       "group": "local",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Effective September 1, 2026",
       "textPath": "data/seed-texts/txnd-local-civil.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "46a817694c28c41732b91b2b672fe23ee08ad28f8c633a97534312a1b1f29dba",
       "textBytes": 83103,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -139,14 +139,14 @@
         "txnd"
       ],
       "group": "local",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Effective September 1, 2026",
       "textPath": "data/seed-texts/txnd-local-criminal.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "033d693354587ef18e9a6eeeb0642db915425c5fd6ec7dba11244b8b0cf9e8d0",
       "textBytes": 48857,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -158,14 +158,14 @@
         "txed"
       ],
       "group": "local",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "As amended February 9, 2026",
       "textPath": "data/seed-texts/txed-local.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "ec191586d6320a5ea48672cdc47378327a47e3150692a2a6847fe71d3ec3263e",
       "textBytes": 182802,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -177,14 +177,14 @@
         "txsd"
       ],
       "group": "local",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Reprinted March 2026; amendments through March 27, 2026",
       "textPath": "data/seed-texts/txsd-local.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "932940b61024065adaf0ac67efe16817871cdd41ca2398956352eea808c75eac",
       "textBytes": 78335,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -196,14 +196,14 @@
         "txsd"
       ],
       "group": "local",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Amended April 18, 2022",
       "textPath": "data/seed-texts/txsd-patent.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "82fdbdaed16a669ba6f0cd27d2ae02c4167c2d99ef555dd8a10a083f52e66ac6",
       "textBytes": 35478,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -215,14 +215,14 @@
         "txwd"
       ],
       "group": "local",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Current linked compilation; cover effective April 26, 2023",
       "textPath": "data/seed-texts/txwd-local.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "475cd12040bc439f1f9041a6e17fe38845025076bba29546e8b67046ec52b647",
       "textBytes": 554857,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -234,14 +234,14 @@
         "ca5"
       ],
       "group": "local",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": null,
       "textPath": "data/seed-texts/ca5-local.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "0eb343b6ea99ac4ac8ec309da1b52d68f42c6009df2ad2af5fa47d3da88e8b26",
       "textBytes": 163416,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -253,14 +253,14 @@
         "ca5"
       ],
       "group": "local",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": null,
       "textPath": "data/seed-texts/ca5-combined.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "babf8e516c16984035591c0a6ca6f3f12973771adb23a4805967b3606f3a93ab",
       "textBytes": 372631,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -270,14 +270,14 @@
       "sourcePage": "https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-civil-procedure",
       "courtIds": [],
       "group": "federal-practice",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Official current compilation dated December 1, 2025",
       "textPath": "data/seed-texts/frcp.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "bd8705fc038d87e4fe222a7ea2e4324222c9430e2373fce56826bd2dfa2f8baf",
       "textBytes": 428240,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -287,14 +287,14 @@
       "sourcePage": "https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-appellate-procedure",
       "courtIds": [],
       "group": "federal-practice",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Official current compilation dated December 1, 2025",
       "textPath": "data/seed-texts/frap.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "a6f417607a71c05a3a54df68a43ec67e691dcf276c46a415e78038ae4f9305f4",
       "textBytes": 232047,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -304,14 +304,14 @@
       "sourcePage": "https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-evidence",
       "courtIds": [],
       "group": "federal-practice",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Official current compilation dated December 1, 2025",
       "textPath": "data/seed-texts/fre.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "sha256": "f6876184ae53b0e268cd5688e5bd7dba768ce15b12f5cfbb7ba6db0650de4ad1",
       "textBytes": 118604,
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00",
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00",
       "lastRetrievalFailed": false
     },
     {
@@ -321,14 +321,14 @@
       "sourcePage": "https://www.txcourts.gov/rules-forms/",
       "courtIds": [],
       "group": "texas-practice",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Last amended October 1, 2026",
       "textPath": "data/seed-texts/trcp.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "lastRetrievalFailed": false,
       "sha256": "bd9d874a40e3fdd9a25a675daad31de2fa3db30acea44d80d3e3362c9d4e178a",
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00"
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00"
     },
     {
       "id": "trap",
@@ -337,14 +337,14 @@
       "sourcePage": "https://www.txcourts.gov/rules-forms/",
       "courtIds": [],
       "group": "texas-practice",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Last amended February 6, 2026",
       "textPath": "data/seed-texts/trap.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "lastRetrievalFailed": false,
       "sha256": "28d0d6236d84e1740c07ceb7a369602588c89787aed8d24a513700f369ebcf51",
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00"
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00"
     },
     {
       "id": "tre",
@@ -353,14 +353,14 @@
       "sourcePage": "https://www.txcourts.gov/rules-forms/",
       "courtIds": [],
       "group": "texas-practice",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Last amended July 2, 2026",
       "textPath": "data/seed-texts/tre.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "lastRetrievalFailed": false,
       "sha256": "707fb0bc2d0dd992c0407afc7c852c174f4191cbb742d0d7475ea0e9e22233b1",
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00"
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00"
     },
     {
       "id": "trja",
@@ -369,14 +369,14 @@
       "sourcePage": "https://www.txcourts.gov/rules-forms/",
       "courtIds": [],
       "group": "texas-practice",
-      "checkedAt": "2026-11-13T22:47:55.581618+00:00",
+      "checkedAt": "2026-11-16T21:33:06.678465+00:00",
       "versionNote": "Last amended July 1, 2026",
       "textPath": "data/seed-texts/trja.txt",
       "retrieval": "direct-pdf",
       "note": "Retrieved from the official source.",
       "lastRetrievalFailed": false,
       "sha256": "a5a55f24ffddfd29ce402ba11d46bd261dd75bcd9ca6858eaf92b61115d908b5",
-      "retrievedAt": "2026-11-13T22:47:55.581618+00:00"
+      "retrievedAt": "2026-11-16T21:33:06.678465+00:00"
     }
   ],
   "administrativeCode": {
