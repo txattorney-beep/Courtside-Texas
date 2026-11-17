@@ -1,6 +1,30 @@
 {
-  "checkedAt": "2026-11-17T04:39:48.496381+00:00",
+  "checkedAt": "2026-11-17T21:50:39.847966+00:00",
   "articles": [
+    {
+      "title": "Ninth Circuit questions tossed expert testimony in AirPods hearing damage case",
+      "url": "https://www.courthousenews.com/ninth-circuit-questions-tossed-expert-testimony-in-airpods-hearing-damage-case/",
+      "publisher": "Courthouse News Service",
+      "date": "2026-11-17",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
+    {
+      "title": "A $3 billion dementia fund languishes a year after Texas voters approved it",
+      "url": "https://www.texastribune.org/2026/11/17/texas-dementia-alzheimers-research-fund-dprit/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-17",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
+    {
+      "title": "Republicans spent years remaking Texas courts in their image. Voters unraveled it in one election.",
+      "url": "https://www.texastribune.org/2026/11/17/texas-supreme-court-criminal-appeals-15th-2026-elections/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-17",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
     {
       "title": "Shift in Texas leadership offers hope that delayed Austin light rail will gain momentum",
       "url": "https://www.texastribune.org/2026/11/16/texas-austin-project-connect-light-rail-lawsuit/",
@@ -10,7 +34,7 @@
       "kind": "Reporting"
     },
     {
-      "title": "Ken Paxton’s office drops lawsuit seeking to ban Muslim civil rights group in Texas",
+      "title": "Ken Paxton’s office ends lawsuit seeking to ban Muslim civil rights group in Texas",
       "url": "https://www.texastribune.org/2026/11/16/texas-cair-ken-paxton-lawsuit-dropped/",
       "publisher": "The Texas Tribune",
       "date": "2026-11-16",
@@ -122,6 +146,22 @@
       "kind": "Published opinion"
     },
     {
+      "title": "Increase in Miscellaneous Fee Schedule - The Judicial Conference has directed fee changes Effective December 1, 2026.",
+      "url": "https://www.ca5.uscourts.gov/news/increase-in-miscellaneous-fee-schedule-the-judicial-conference-has-directed-fee-changes-effective-december-1-2026",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-17",
+      "category": "Fifth Circuit",
+      "kind": "Court announcement"
+    },
+    {
+      "title": "PACER has announced a temporary fee increase effective January 1, 2027.",
+      "url": "https://www.ca5.uscourts.gov/news/pacer-has-announced-a-temporary-fee-increase-effective-january-1-2027",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-17",
+      "category": "Fifth Circuit",
+      "kind": "Court announcement"
+    },
+    {
       "title": "November 5, 2026, Special Committee Notice in Complaint Nos. 05-26-90177 & 05-26-90196 (Judge Ada E. Brown)",
       "url": "https://www.ca5.uscourts.gov/news/november-5-2026-special-committee-notice-in-complaint-nos-05-26-90177-05-26-90196-judge-ada-e-brown",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
@@ -142,22 +182,6 @@
       "url": "https://www.ca5.uscourts.gov/news/october-30-2026-special-committee-order-and-transcript-in-complaint-nos-05-26-90177-05-26-90196-judge-ada-e-brown",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
       "date": "2026-10-30",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
-    },
-    {
-      "title": "CM/ECF Planned Maintenance",
-      "url": "https://www.ca5.uscourts.gov/news/cmecf-planned-maintenance",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-10-23",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
-    },
-    {
-      "title": "Notice - Payments",
-      "url": "https://www.ca5.uscourts.gov/news/notice-payments",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-10-23",
       "category": "Fifth Circuit",
       "kind": "Court announcement"
     },
@@ -288,37 +312,37 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
+      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
       "success": true,
-      "items": 0
+      "items": 1
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
+      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
       "success": true,
-      "items": 3
+      "items": 5
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
+      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
       "success": true,
       "items": 9
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
+      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
       "success": true,
-      "items": 51
+      "items": 36
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
+      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
       "success": true,
-      "items": 7
+      "items": 9
     }
   ]
 }
