@@ -1,6 +1,22 @@
 {
-  "checkedAt": "2026-11-16T18:15:42.907030+00:00",
+  "checkedAt": "2026-11-17T04:39:48.496381+00:00",
   "articles": [
+    {
+      "title": "Shift in Texas leadership offers hope that delayed Austin light rail will gain momentum",
+      "url": "https://www.texastribune.org/2026/11/16/texas-austin-project-connect-light-rail-lawsuit/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-16",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
+    {
+      "title": "Ken Paxton’s office drops lawsuit seeking to ban Muslim civil rights group in Texas",
+      "url": "https://www.texastribune.org/2026/11/16/texas-cair-ken-paxton-lawsuit-dropped/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-16",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
     {
       "title": "Texas drops NCAA deceptive-marketing lawsuit",
       "publisher": "The Texas Tribune",
@@ -74,6 +90,38 @@
       "kind": "Unpublished opinion"
     },
     {
+      "title": "25-10824 M. v. Aledo",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-10824-CV1.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-16",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "25-20132 Tuttle v. Gallegos",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-20132-CV2.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-16",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "25-20132 Tuttle v. Gallegos",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-20132-CV1.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-16",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "25-30624 Poor Boy v. City of Winnfield",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-30624-CV0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-16",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
       "title": "November 5, 2026, Special Committee Notice in Complaint Nos. 05-26-90177 & 05-26-90196 (Judge Ada E. Brown)",
       "url": "https://www.ca5.uscourts.gov/news/november-5-2026-special-committee-notice-in-complaint-nos-05-26-90177-05-26-90196-judge-ada-e-brown",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
@@ -112,38 +160,6 @@
       "date": "2026-10-23",
       "category": "Fifth Circuit",
       "kind": "Court announcement"
-    },
-    {
-      "title": "October 20, 2026, Special Committee Order in Complaint No. 05-26-90196 (Judge Ada E. Brown)",
-      "url": "https://www.ca5.uscourts.gov/news/october-20-2026-special-committee-order-in-complaint-no-05-26-90196-judge-ada-e-brown",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-10-20",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
-    },
-    {
-      "title": "October 19, 2026, Statement of the Fifth Circuit Judicial Council",
-      "url": "https://www.ca5.uscourts.gov/news/october-19-2026-statement-of-the-fifth-circuit-judicial-council",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-10-19",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
-    },
-    {
-      "title": "26-10649 Sentry Select Insurance v. National Trans",
-      "url": "https://www.ca5.uscourts.gov/opinions/unpub/26/26-10649.0.pdf",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-16",
-      "category": "Fifth Circuit",
-      "kind": "Unpublished opinion"
-    },
-    {
-      "title": "26-50289 USA v. Carrillo",
-      "url": "https://www.ca5.uscourts.gov/opinions/unpub/26/26-50289.0.pdf",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-16",
-      "category": "Fifth Circuit",
-      "kind": "Unpublished opinion"
     },
     {
       "title": "State Bar podcast examines the role of jury trials",
@@ -272,35 +288,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-16T18:15:42.907030+00:00",
+      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
       "success": true,
       "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-16T18:15:42.907030+00:00",
+      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
       "success": true,
-      "items": 1
+      "items": 3
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-16T18:15:42.907030+00:00",
+      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
       "success": true,
       "items": 9
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-16T18:15:42.907030+00:00",
+      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
       "success": true,
-      "items": 44
+      "items": 51
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-16T18:15:42.907030+00:00",
+      "checkedAt": "2026-11-17T04:39:48.496381+00:00",
       "success": true,
       "items": 7
     }
