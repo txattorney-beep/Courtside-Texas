@@ -37,3 +37,6 @@ body{background:var(--paper);font-size:15px}a:focus-visible,button:focus-visible
 
 /* Full court-set links, including narrow phone layouts. */
 .court-list-link{display:inline-block;max-width:100%;font-size:20px;line-height:1.4;min-height:44px;overflow-wrap:anywhere;text-underline-offset:3px}.court-list-link:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.complete-court-list li{margin-bottom:12px;overflow-wrap:anywhere}
+
+/* Desktop navigation only; helper text and phone menu remain 20px. */
+@media(min-width:701px){.nav a{font-size:18px}}
