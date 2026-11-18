@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-17T21:50:39.847966+00:00",
+  "checkedAt": "2026-11-18T03:45:33.625888+00:00",
   "articles": [
     {
       "title": "Ninth Circuit questions tossed expert testimony in AirPods hearing damage case",
@@ -20,6 +20,14 @@
     {
       "title": "Republicans spent years remaking Texas courts in their image. Voters unraveled it in one election.",
       "url": "https://www.texastribune.org/2026/11/17/texas-supreme-court-criminal-appeals-15th-2026-elections/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-17",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
+    {
+      "title": "Ken Paxton drops out of doctor’s lawsuit against the Texas Medical Board",
+      "url": "https://www.texastribune.org/2026/11/17/texas-attorney-general-ken-paxton-mary-talley-bowden/",
       "publisher": "The Texas Tribune",
       "date": "2026-11-17",
       "category": "Texas",
@@ -114,6 +122,14 @@
       "kind": "Unpublished opinion"
     },
     {
+      "title": "25-30111 USA v. Keelen",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-30111-CR0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-17",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
       "title": "25-10824 M. v. Aledo",
       "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-10824-CV1.pdf",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
@@ -174,14 +190,6 @@
       "url": "https://www.ca5.uscourts.gov/vacancies/cja-administrative-attorney-vacancy",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
       "date": "2026-11-03",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
-    },
-    {
-      "title": "October 30, 2026, Special Committee Order and Transcript in Complaint Nos. 05-26-90177 & 05-26-90196 (Judge Ada E. Brown)",
-      "url": "https://www.ca5.uscourts.gov/news/october-30-2026-special-committee-order-and-transcript-in-complaint-nos-05-26-90177-05-26-90196-judge-ada-e-brown",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-10-30",
       "category": "Fifth Circuit",
       "kind": "Court announcement"
     },
@@ -312,35 +320,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
+      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
       "success": true,
-      "items": 1
+      "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
+      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
       "success": true,
-      "items": 5
+      "items": 6
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
+      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
       "success": true,
       "items": 9
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
+      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
       "success": true,
-      "items": 36
+      "items": 41
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-17T21:50:39.847966+00:00",
+      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
       "success": true,
       "items": 9
     }
