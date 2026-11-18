@@ -1,6 +1,14 @@
 {
-  "checkedAt": "2026-11-18T03:45:33.625888+00:00",
+  "checkedAt": "2026-11-18T17:52:28.728731+00:00",
   "articles": [
+    {
+      "title": "A Democrat-led Texas begins to take shape",
+      "url": "https://www.courthousenews.com/a-democrat-led-texas-begins-to-take-shape/",
+      "publisher": "Courthouse News Service",
+      "date": "2026-11-18",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
     {
       "title": "Ninth Circuit questions tossed expert testimony in AirPods hearing damage case",
       "url": "https://www.courthousenews.com/ninth-circuit-questions-tossed-expert-testimony-in-airpods-hearing-damage-case/",
@@ -320,35 +328,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
+      "checkedAt": "2026-11-18T17:52:28.728731+00:00",
       "success": true,
-      "items": 0
+      "items": 1
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
+      "checkedAt": "2026-11-18T17:52:28.728731+00:00",
       "success": true,
       "items": 6
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
+      "checkedAt": "2026-11-18T17:52:28.728731+00:00",
       "success": true,
       "items": 9
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
+      "checkedAt": "2026-11-18T17:52:28.728731+00:00",
       "success": true,
-      "items": 41
+      "items": 33
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-18T03:45:33.625888+00:00",
+      "checkedAt": "2026-11-18T17:52:28.728731+00:00",
       "success": true,
       "items": 9
     }
