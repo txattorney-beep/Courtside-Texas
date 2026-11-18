@@ -40,3 +40,4 @@ body{background:var(--paper);font-size:15px}a:focus-visible,button:focus-visible
 
 /* Desktop navigation only; helper text and phone menu remain 20px. */
 @media(min-width:701px){.nav a{font-size:18px}}
+@media(min-width:1101px){.nav a{padding-inline:2px;gap:2px}}
