@@ -101,6 +101,9 @@ def version_assets(dist):
  version=hashlib.sha256(b''.join((dist/name).read_bytes() for name in files)+(ROOT/'public/sw.js').read_bytes()).hexdigest()[:16]
  mapping={}
  assets=dist/'assets';assets.mkdir(exist_ok=True)
+ # Cached HTML and open tabs may still reference earlier immutable asset hashes.
+ previous_assets=ROOT/'site'/'assets'
+ if previous_assets.exists():shutil.copytree(previous_assets,assets,dirs_exist_ok=True)
  for name in files:
   source=(dist/name).read_text().replace('__COURTSIDE_RELEASE__',version).replace('__COURTSIDE_BUILT_AT__',built_at)
   for old,new in mapping.items():source=source.replace("'"+old+"'","'"+new+"'")
