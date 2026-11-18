@@ -31,5 +31,6 @@ body{background:var(--paper);font-size:15px}a:focus-visible,button:focus-visible
 .reference-category-tabs{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}.reference-category-tabs a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:1px solid currentColor;text-decoration:none}
 
 /* Requested readability adjustment: helper text and main page links only. */
-.search-scope,.search-tips,.search-tips button,.nav a{font-size:18px}
+.search-scope,.search-tips,.search-tips button,.nav a{font-size:26px}
 .nav{flex-wrap:wrap}
+.nav a{white-space:normal;max-width:100%}
