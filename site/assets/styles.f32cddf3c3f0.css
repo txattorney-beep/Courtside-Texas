@@ -34,3 +34,6 @@ body{background:var(--paper);font-size:15px}a:focus-visible,button:focus-visible
 .search-scope,.search-tips,.search-tips button,.nav a{font-size:20px}
 .nav{flex-wrap:wrap}
 .nav a{white-space:normal;max-width:100%}
+
+/* Full court-set links, including narrow phone layouts. */
+.court-list-link{display:inline-block;max-width:100%;font-size:20px;line-height:1.4;min-height:44px;overflow-wrap:anywhere;text-underline-offset:3px}.court-list-link:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.complete-court-list li{margin-bottom:12px;overflow-wrap:anywhere}
