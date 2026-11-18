@@ -47,6 +47,11 @@ assert articles and len(news_urls)==len(set(news_urls))
 assert all(a['category'] in ['Texas','Fifth Circuit','Practice'] and a['title'] and a['publisher'] and re.fullmatch(r'\d{4}-\d{2}-\d{2}',a['date']) and a['url'].startswith('https://') for a in articles)
 assert news['feedStatus'] and any(source.get('success') for source in news['feedStatus'])
 news_html=(p/'news/index.html').read_text()
+from news_page import collection_stamp
+assert collection_stamp('2026-11-18T03:45:33+00:00') == 'Nov 17, 2026 at 09:45 PM CST'
+assert collection_stamp('2027-07-01T13:30:00Z') == 'Jul 01, 2027 at 08:30 AM CDT'
+assert collection_stamp(news['checkedAt']) in news_html
+assert 'Scheduled twice daily' in news_html
 from html import escape
 assert all(escape(url,quote=True) in news_html for url in news_urls)
 assert 'https://courtsidetexas.com/news/' in urls
