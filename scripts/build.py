@@ -113,6 +113,12 @@ def version_assets(dist):
   (dist/target.lstrip('/')).write_text(source);mapping['/'+name]=target
  for page in dist.rglob('*.html'):
   content=page.read_text()
+  notice='<div class="rights-notice" style="font-size:12px;line-height:1.6;margin-top:16px"><p>© 2026 Eric A. Hudson. All rights reserved in original copyrightable materials and protectable selection and arrangement.</p><p>Courtside Texas™ is used as a trademark by Eric A. Hudson. Third-party materials and marks belong to their respective owners. No copyright is claimed in public-domain material.</p></div>'
+  content=re.sub(r'<p class="copyright">.*?</p>', '', content)
+  if '</footer>' in content:
+   content=content.replace('</footer>',notice+'</footer>',1)
+  else:
+   content=content.replace('</body>','<footer class="footer" style="padding:20px 32px">'+notice+'</footer></body>')
   content=content.replace('</head>','<link rel="stylesheet" href="/share.css"><script src="/share.js" defer></script></head>')
   for old,new in mapping.items():content=content.replace('"'+old+'"','"'+new+'"')
   page.write_text(content)
