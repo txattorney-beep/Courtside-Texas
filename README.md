@@ -64,3 +64,12 @@ Builds fingerprint CSS and JavaScript filenames and version the offline cache. L
 ## Visual identity
 
 The editorial field-guide identity uses an editable gavel/C monogram, paper and ink colors, brick accents, numbered navigation, and ruled court listings. The source and authorship limitations are documented in `docs/DESIGN.md`. Desktop and phone navigation share the same court, rule, news, records, and saved-court functions.
+
+
+## News refresh reliability
+
+The news workflow targets 7:30 a.m. and 4:30 p.m. in `America/Chicago`, including daylight saving time. Catch-up checks at 7:50/8:10 a.m. and 4:50/5:10 p.m. refresh only if the latest due window has not been collected. Manual and source-change runs force a refresh. GitHub schedules can still be delayed or dropped; these are targets, not exact-time guarantees. An independent assistant check can retry a missed run without another stored GitHub credential.
+
+Publication now verifies the actual public JSON timestamp and all rendered headline titles, rather than treating a successful build as proof of a fresh live page. Failed sources retain prior articles; if all feeds fail, the last published edition remains unchanged. The news page displays the actual Central-time collection timestamp.
+
+The serving Worker always checks the origin for `/news/` and `/data/news.json`, bypassing edge/browser freshness caches and versioning the origin request. It keeps an outage-only last-good copy for up to seven days per cache location, if available. Responses identify `origin-checked` or `last-good-origin-unavailable` in `X-Courtside-News`; timestamps are never advanced for fallback data. Other site assets retain their existing caching. Worker code changes must be deployed to the existing `courtside-texas` Worker as well as committed here; GitHub site builds do not deploy Worker code.

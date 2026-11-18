@@ -98,9 +98,9 @@ test('back and forward navigation routes legacy queries to the full-site search'
  vm.createContext(context);vm.runInContext(handler,context);callback();
  assert.deepEqual(redirect,{q:'business court rules',replace:true});
 });
-function workerHarness(cached){
+function workerHarness(cached,upstreamStatus=200){
  const calls={reads:0,writes:0,fetches:[]};
- const ctx={Request,Response,Headers,URL,console,module:{exports:{}},caches:{default:{match:async()=>{calls.reads++;return cached?.clone();},put:async()=>{calls.writes++;}}},fetch:async(url,options)=>{calls.fetches.push({url,options});return new Response('content');}};
+ const ctx={Request,Response,Headers,URL,console,module:{exports:{}},caches:{default:{match:async()=>{calls.reads++;return cached?.clone();},put:async()=>{calls.writes++;}}},fetch:async(url,options)=>{calls.fetches.push({url,options});return new Response('content',{status:upstreamStatus});}};
  vm.createContext(ctx);vm.runInContext(fs.readFileSync('cloudflare/worker.js','utf8').replace('export default','module.exports ='),ctx);
  return {worker:ctx.module.exports,calls,wait:{waitUntil:()=>{}}};
 }
@@ -163,4 +163,25 @@ test('older open tabs receive a release response that cannot trigger automatic r
  const app=fs.readFileSync('public/app.js','utf8');
  assert.ok(!app.includes('location.reload('));
  assert.ok(!app.includes('setInterval(checkRelease'));
+});
+
+
+test('news bypasses cached editions and stores an outage-only last-good copy',async()=>{
+ for(const path of ['/news/','/data/news.json']){
+  const {worker,calls,wait}=workerHarness(new Response('stale'));
+  const r=await worker.fetch(new Request('https://courtsidetexas.com'+path),{},wait);
+  assert.equal(await r.text(),'content');assert.equal(calls.reads,0);
+  assert.equal(calls.fetches[0].options.cf.cacheTtl,0);
+  assert.match(calls.fetches[0].url,/courtside-refresh=/);
+  assert.equal(r.headers.get('Cache-Control'),'no-store');
+  assert.equal(r.headers.get('X-Courtside-News'),'origin-checked');
+  assert.equal(calls.writes,1);
+ }
+});
+test('news serves labeled last-good edition when origin fails',async()=>{
+ const {worker,calls,wait}=workerHarness(new Response('last good'),503);
+ const r=await worker.fetch(new Request('https://courtsidetexas.com/data/news.json'),{},wait);
+ assert.equal(await r.text(),'last good');assert.equal(calls.writes,0);
+ assert.equal(r.headers.get('Cache-Control'),'no-store');
+ assert.equal(r.headers.get('X-Courtside-News'),'last-good-origin-unavailable');
 });

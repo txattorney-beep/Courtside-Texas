@@ -1,11 +1,16 @@
 name: Twice-daily legal news refresh
 on:
   schedule:
-    # 07:30 and 16:30 CST (UTC-6), every day.
-    - cron: '30 13,22 * * *'
+    # Local Central time, including DST. Catch-up checks only refresh a missed window.
+    - cron: '30 7,16 * * *'
+      timezone: America/Chicago
+    - cron: '50 7,16 * * *'
+      timezone: America/Chicago
+    - cron: '10 8,17 * * *'
+      timezone: America/Chicago
   push:
     branches: [main]
-    paths: ['scripts/refresh_news.py', '.github/workflows/news-refresh.yml', 'public/data/news-seed.json']
+    paths: ['scripts/refresh_news.py', 'scripts/news_health.py', '.github/workflows/news-refresh.yml', 'public/data/news-seed.json']
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,7 +25,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - name: Check whether the Central-time edition is due
+        id: due
+        run: python3 scripts/news_health.py gate
       - name: Refresh current legal headlines
+        if: steps.due.outputs.refresh == 'true'
         run: python3 scripts/refresh_news.py
       - name: Build and validate
         run: |
@@ -29,6 +38,7 @@ jobs:
           python3 scripts/validate.py
           node --test tests/search.test.cjs
       - name: Publish news edition
+        if: steps.due.outputs.refresh == 'true'
         run: |
           rm -rf site
           cp -a dist site
@@ -40,5 +50,7 @@ jobs:
             git pull --rebase origin main
             git push
           fi
+      - name: Verify actual public headlines and timestamp
+        run: python3 scripts/news_health.py
       - name: Notify search engines
         run: python3 scripts/submit_indexnow.py --news-only
