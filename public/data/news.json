@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-19T21:17:14.834665+00:00",
+  "checkedAt": "2026-11-19T23:14:05.298886+00:00",
   "articles": [
     {
       "title": "A Democrat-led Texas begins to take shape",
@@ -328,35 +328,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
+      "checkedAt": "2026-11-19T23:14:05.298886+00:00",
       "success": true,
       "items": 1
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
+      "checkedAt": "2026-11-19T23:14:05.298886+00:00",
       "success": true,
-      "items": 7
+      "items": 6
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
+      "checkedAt": "2026-11-19T23:14:05.298886+00:00",
       "success": true,
       "items": 8
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
+      "checkedAt": "2026-11-19T23:14:05.298886+00:00",
       "success": true,
       "items": 44
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
+      "checkedAt": "2026-11-19T23:14:05.298886+00:00",
       "success": true,
       "items": 7
     }
