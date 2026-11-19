@@ -1,10 +1,18 @@
 {
-  "checkedAt": "2026-11-18T18:02:25.960770+00:00",
+  "checkedAt": "2026-11-19T03:46:58.149541+00:00",
   "articles": [
     {
       "title": "A Democrat-led Texas begins to take shape",
       "url": "https://www.courthousenews.com/a-democrat-led-texas-begins-to-take-shape/",
       "publisher": "Courthouse News Service",
+      "date": "2026-11-18",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
+    {
+      "title": "Sen. John Cornyn blocks Trump nominee for federal judge in Texas",
+      "url": "https://www.texastribune.org/2026/11/18/texas-john-cornyn-trump-judge-gaiser-blocked/",
+      "publisher": "The Texas Tribune",
       "date": "2026-11-18",
       "category": "Texas",
       "kind": "Reporting"
@@ -272,14 +280,6 @@
       "date": "2026-10-22",
       "category": "Practice",
       "kind": "Bar news"
-    },
-    {
-      "title": "Intellectual Property Considerations in Board Game Crowdfunding",
-      "url": "https://blog.texasbar.com/2026/10/articles/intellectual-property/intellectual-property-considerations-in-board-game-crowdfunding/",
-      "publisher": "State Bar of Texas",
-      "date": "2026-10-19",
-      "category": "Practice",
-      "kind": "Bar news"
     }
   ],
   "sources": [
@@ -328,37 +328,37 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-18T18:02:25.960770+00:00",
+      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
       "success": true,
-      "items": 1
+      "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-18T18:02:25.960770+00:00",
+      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
       "success": true,
-      "items": 6
+      "items": 7
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-18T18:02:25.960770+00:00",
-      "success": false,
-      "error": "The read operation timed out"
+      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
+      "success": true,
+      "items": 8
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-18T18:02:25.960770+00:00",
+      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
       "success": true,
-      "items": 33
+      "items": 44
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-18T18:02:25.960770+00:00",
+      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
       "success": true,
-      "items": 9
+      "items": 8
     }
   ]
 }
