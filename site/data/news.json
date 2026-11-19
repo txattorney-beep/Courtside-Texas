@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-19T03:46:58.149541+00:00",
+  "checkedAt": "2026-11-19T21:17:14.834665+00:00",
   "articles": [
     {
       "title": "A Democrat-led Texas begins to take shape",
@@ -138,6 +138,14 @@
       "kind": "Unpublished opinion"
     },
     {
+      "title": "25-60348 NetChoice v. Fitch",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-60348-CV0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-19",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
       "title": "25-30111 USA v. Keelen",
       "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-30111-CR0.pdf",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
@@ -198,14 +206,6 @@
       "url": "https://www.ca5.uscourts.gov/news/november-5-2026-special-committee-notice-in-complaint-nos-05-26-90177-05-26-90196-judge-ada-e-brown",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
       "date": "2026-11-05",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
-    },
-    {
-      "title": "CJA Administrative Attorney Vacancy",
-      "url": "https://www.ca5.uscourts.gov/vacancies/cja-administrative-attorney-vacancy",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-03",
       "category": "Fifth Circuit",
       "kind": "Court announcement"
     },
@@ -328,37 +328,37 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
+      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
       "success": true,
-      "items": 0
+      "items": 1
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
+      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
       "success": true,
       "items": 7
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
+      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
       "success": true,
       "items": 8
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
+      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
       "success": true,
       "items": 44
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-19T03:46:58.149541+00:00",
+      "checkedAt": "2026-11-19T21:17:14.834665+00:00",
       "success": true,
-      "items": 8
+      "items": 7
     }
   ]
 }
