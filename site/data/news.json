@@ -1,6 +1,22 @@
 {
-  "checkedAt": "2026-11-19T23:20:15.071869+00:00",
+  "checkedAt": "2026-11-20T13:59:03.571516+00:00",
   "articles": [
+    {
+      "title": "Tarrant County Republicans, stung by defeat, are soul-searching and finger-pointing",
+      "url": "https://www.texastribune.org/2026/11/20/texas-tarrant-county-republicans-future-matt-krause/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-20",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
+    {
+      "title": "Ken Paxton, feds agree to keep razor wire at Texas border for the next 30 years",
+      "url": "https://www.texastribune.org/2026/11/19/texas-border-wire-immigration-ken-paxton/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-20",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
     {
       "title": "A Democrat-led Texas begins to take shape",
       "url": "https://www.courthousenews.com/a-democrat-led-texas-begins-to-take-shape/",
@@ -146,6 +162,38 @@
       "kind": "Published opinion"
     },
     {
+      "title": "24-60281 American Public Health Association v. EPA",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/24/24-60281-CV0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-19",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "24-60193 TexasChemistry Council v. EPA",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/24/24-60193-CV0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-19",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "24-30241 USA v. Deare",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/24/24-30241-CR0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-19",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "25-60198 Cuevas Machine v. Calgon Carbon",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-60198-CV0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-19",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
       "title": "25-30111 USA v. Keelen",
       "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-30111-CR0.pdf",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
@@ -176,38 +224,6 @@
       "date": "2026-11-16",
       "category": "Fifth Circuit",
       "kind": "Published opinion"
-    },
-    {
-      "title": "25-30624 Poor Boy v. City of Winnfield",
-      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-30624-CV0.pdf",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-16",
-      "category": "Fifth Circuit",
-      "kind": "Published opinion"
-    },
-    {
-      "title": "Increase in Miscellaneous Fee Schedule - The Judicial Conference has directed fee changes Effective December 1, 2026.",
-      "url": "https://www.ca5.uscourts.gov/news/increase-in-miscellaneous-fee-schedule-the-judicial-conference-has-directed-fee-changes-effective-december-1-2026",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-17",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
-    },
-    {
-      "title": "PACER has announced a temporary fee increase effective January 1, 2027.",
-      "url": "https://www.ca5.uscourts.gov/news/pacer-has-announced-a-temporary-fee-increase-effective-january-1-2027",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-17",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
-    },
-    {
-      "title": "November 5, 2026, Special Committee Notice in Complaint Nos. 05-26-90177 & 05-26-90196 (Judge Ada E. Brown)",
-      "url": "https://www.ca5.uscourts.gov/news/november-5-2026-special-committee-notice-in-complaint-nos-05-26-90177-05-26-90196-judge-ada-e-brown",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-05",
-      "category": "Fifth Circuit",
-      "kind": "Court announcement"
     },
     {
       "title": "State Bar podcast examines the role of jury trials",
@@ -328,35 +344,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-19T23:20:15.071869+00:00",
+      "checkedAt": "2026-11-20T13:59:03.571516+00:00",
       "success": true,
-      "items": 1
+      "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-19T23:20:15.071869+00:00",
+      "checkedAt": "2026-11-20T13:59:03.571516+00:00",
       "success": true,
       "items": 6
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-19T23:20:15.071869+00:00",
+      "checkedAt": "2026-11-20T13:59:03.571516+00:00",
       "success": true,
       "items": 8
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-19T23:20:15.071869+00:00",
+      "checkedAt": "2026-11-20T13:59:03.571516+00:00",
       "success": true,
-      "items": 44
+      "items": 48
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-19T23:20:15.071869+00:00",
+      "checkedAt": "2026-11-20T13:59:03.571516+00:00",
       "success": true,
       "items": 7
     }
