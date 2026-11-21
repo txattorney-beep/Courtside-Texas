@@ -1,6 +1,30 @@
 {
-  "checkedAt": "2026-11-20T22:34:23.179702+00:00",
+  "checkedAt": "2026-11-21T13:34:13.069614+00:00",
   "articles": [
+    {
+      "title": "State dismisses lawsuit against Latino voting group Jolt Initiative",
+      "url": "https://www.texastribune.org/2026/11/20/texas-attorney-general-ken-paxton-jolt-initiaitive/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-21",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
+    {
+      "title": "Texas drops abortion pill lawsuits against out-of-state medical providers",
+      "url": "https://www.texastribune.org/2026/11/20/texas-paxton-abortion-pill-lawsuits-dropped-california-delaware/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-21",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
+    {
+      "title": "Feds admit in court filing that Austin man who was deported held dual citizenship",
+      "url": "https://www.texastribune.org/2026/11/20/texas-man-deportation-federal-lawsuit-dismissal-sought/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-21",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
     {
       "title": "Tarrant County Republicans, stung by defeat, are soul-searching and finger-pointing",
       "url": "https://www.texastribune.org/2026/11/20/texas-tarrant-county-republicans-future-matt-krause/",
@@ -122,22 +146,6 @@
       "kind": "Reporting"
     },
     {
-      "title": "Justice Department plans to take over Texas Planned Parenthood suit",
-      "publisher": "The Texas Tribune",
-      "date": "2026-11-08",
-      "url": "https://www.texastribune.org/2026/11/08/texas-planned-parenthood-lawsuit-justice-department/",
-      "category": "Texas",
-      "kind": "Reporting"
-    },
-    {
-      "title": "Fifteenth Court cancels arguments in hemp-rule challenge",
-      "publisher": "The Texas Tribune",
-      "date": "2026-11-06",
-      "url": "https://www.texastribune.org/2026/11/06/texas-15th-court-appeals-arguments-cancel-hemp/",
-      "category": "Texas",
-      "kind": "Reporting"
-    },
-    {
       "title": "Fifth Circuit affirms dismissal of vaccine-trial False Claims Act suit",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
       "date": "2026-11-13",
@@ -160,6 +168,22 @@
       "url": "https://www.ca5.uscourts.gov/opinions/unpub/25/25-10958.0.pdf",
       "category": "Fifth Circuit",
       "kind": "Unpublished opinion"
+    },
+    {
+      "title": "24-10386 State of Texas v. Blanche",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/24/24-10386-CV1.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-20",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "26-40371 In Re: G6 Hospitality Property",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/26/26-40371-CV0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-20",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
     },
     {
       "title": "25-60348 NetChoice v. Fitch",
@@ -212,22 +236,6 @@
     {
       "title": "25-10824 M. v. Aledo",
       "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-10824-CV1.pdf",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-16",
-      "category": "Fifth Circuit",
-      "kind": "Published opinion"
-    },
-    {
-      "title": "25-20132 Tuttle v. Gallegos",
-      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-20132-CV2.pdf",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-16",
-      "category": "Fifth Circuit",
-      "kind": "Published opinion"
-    },
-    {
-      "title": "25-20132 Tuttle v. Gallegos",
-      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-20132-CV1.pdf",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
       "date": "2026-11-16",
       "category": "Fifth Circuit",
@@ -352,35 +360,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-20T22:34:23.179702+00:00",
+      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
       "success": true,
       "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-20T22:34:23.179702+00:00",
+      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
       "success": true,
-      "items": 4
+      "items": 7
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-20T22:34:23.179702+00:00",
+      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
       "success": true,
       "items": 8
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-20T22:34:23.179702+00:00",
+      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
       "success": true,
-      "items": 52
+      "items": 49
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-20T22:34:23.179702+00:00",
+      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
       "success": true,
       "items": 7
     }
