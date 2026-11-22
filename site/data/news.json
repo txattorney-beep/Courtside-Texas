@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-21T13:34:13.069614+00:00",
+  "checkedAt": "2026-11-22T01:28:13.497746+00:00",
   "articles": [
     {
       "title": "State dismisses lawsuit against Latino voting group Jolt Initiative",
@@ -242,6 +242,30 @@
       "kind": "Published opinion"
     },
     {
+      "title": "Texas attorneys provided an estimated 5.3 million pro bono hours in 2025, survey finds",
+      "url": "https://blog.texasbar.com/2026/11/articles/pro-bono/texas-attorneys-provided-an-estimated-5-3-million-pro-bono-hours-in-2025-survey-finds/",
+      "publisher": "State Bar of Texas",
+      "date": "2026-11-20",
+      "category": "Practice",
+      "kind": "Bar news"
+    },
+    {
+      "title": "Houston comes together to advance access to justice at 77th Annual Harvest Party",
+      "url": "https://blog.texasbar.com/2026/11/articles/access-to-justice/houston-comes-together-to-advance-access-to-justice-at-77th-annual-harvest-party/",
+      "publisher": "State Bar of Texas",
+      "date": "2026-11-18",
+      "category": "Practice",
+      "kind": "Bar news"
+    },
+    {
+      "title": "You’ve Got a Military Client. Now What?",
+      "url": "https://blog.texasbar.com/2026/11/articles/podcast/youve-got-a-military-client-now-what/",
+      "publisher": "State Bar of Texas",
+      "date": "2026-11-16",
+      "category": "Practice",
+      "kind": "Bar news"
+    },
+    {
       "title": "State Bar podcast examines the role of jury trials",
       "publisher": "State Bar of Texas",
       "date": "2026-11-13",
@@ -304,14 +328,6 @@
       "date": "2026-10-23",
       "category": "Practice",
       "kind": "Bar news"
-    },
-    {
-      "title": "Professional Ethics Committee seeks public comments on proposed ethics opinions",
-      "url": "https://blog.texasbar.com/2026/10/articles/ethics/professional-ethics-committee-seeks-public-comments-on-proposed-ethics-opinions-4/",
-      "publisher": "State Bar of Texas",
-      "date": "2026-10-22",
-      "category": "Practice",
-      "kind": "Bar news"
     }
   ],
   "sources": [
@@ -360,35 +376,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
+      "checkedAt": "2026-11-22T01:28:13.497746+00:00",
       "success": true,
       "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
+      "checkedAt": "2026-11-22T01:28:13.497746+00:00",
       "success": true,
       "items": 7
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
+      "checkedAt": "2026-11-22T01:28:13.497746+00:00",
       "success": true,
-      "items": 8
+      "items": 10
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
+      "checkedAt": "2026-11-22T01:28:13.497746+00:00",
       "success": true,
       "items": 49
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-21T13:34:13.069614+00:00",
+      "checkedAt": "2026-11-22T01:28:13.497746+00:00",
       "success": true,
       "items": 7
     }
