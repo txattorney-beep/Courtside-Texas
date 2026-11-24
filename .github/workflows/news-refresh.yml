@@ -52,3 +52,4 @@ jobs:
         run: python3 scripts/news_health.py
       - name: Notify search engines
         run: python3 scripts/submit_indexnow.py --news-only
+# Manual refresh requested: 2026-11-24
