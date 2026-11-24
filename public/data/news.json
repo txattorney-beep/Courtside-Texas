@@ -1,6 +1,14 @@
 {
-  "checkedAt": "2026-11-23T22:31:56.576188+00:00",
+  "checkedAt": "2026-11-24T13:31:38.425169+00:00",
   "articles": [
+    {
+      "title": "Texas Supreme Court dismisses challenge to abortion restrictions",
+      "url": "https://www.texastribune.org/2026/11/23/texas-abortion-lawsuit-dismissal-heartbeat-act/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-24",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
     {
       "title": "State dismisses lawsuit against Latino voting group Jolt Initiative",
       "url": "https://www.texastribune.org/2026/11/20/texas-attorney-general-ken-paxton-jolt-initiaitive/",
@@ -134,14 +142,6 @@
       "publisher": "The Texas Tribune",
       "date": "2026-11-10",
       "url": "https://www.texastribune.org/2026/11/10/ken-paxton-attorney-general-fiel-immigration-lawsuit-houston/",
-      "category": "Texas",
-      "kind": "Reporting"
-    },
-    {
-      "title": "James Sullivan nominated to federal district court",
-      "publisher": "The Texas Tribune",
-      "date": "2026-11-10",
-      "url": "https://www.texastribune.org/2026/11/10/james-sullivan-texas-supreme-court-judge-nominated-trump/",
       "category": "Texas",
       "kind": "Reporting"
     },
@@ -368,35 +368,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-23T22:31:56.576188+00:00",
+      "checkedAt": "2026-11-24T13:31:38.425169+00:00",
       "success": true,
-      "items": 1
+      "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-23T22:31:56.576188+00:00",
+      "checkedAt": "2026-11-24T13:31:38.425169+00:00",
       "success": true,
       "items": 6
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-23T22:31:56.576188+00:00",
+      "checkedAt": "2026-11-24T13:31:38.425169+00:00",
       "success": true,
       "items": 9
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-23T22:31:56.576188+00:00",
+      "checkedAt": "2026-11-24T13:31:38.425169+00:00",
       "success": true,
-      "items": 56
+      "items": 58
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-23T22:31:56.576188+00:00",
+      "checkedAt": "2026-11-24T13:31:38.425169+00:00",
       "success": true,
       "items": 5
     }
