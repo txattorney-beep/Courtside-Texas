@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-24T22:32:08.602943+00:00",
+  "checkedAt": "2026-11-25T00:27:06.844166+00:00",
   "articles": [
     {
       "title": "Texas Supreme Court dismisses challenge to abortion restrictions",
@@ -368,35 +368,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-24T22:32:08.602943+00:00",
+      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
       "success": true,
       "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-24T22:32:08.602943+00:00",
+      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
       "success": true,
       "items": 5
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-24T22:32:08.602943+00:00",
+      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
       "success": true,
       "items": 9
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-24T22:32:08.602943+00:00",
+      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
       "success": true,
       "items": 60
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-24T22:32:08.602943+00:00",
+      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
       "success": true,
       "items": 5
     }
