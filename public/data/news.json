@@ -1,6 +1,14 @@
 {
-  "checkedAt": "2026-11-25T00:27:06.844166+00:00",
+  "checkedAt": "2026-11-25T13:31:48.862502+00:00",
   "articles": [
+    {
+      "title": "Lavish European travel by Texas’ ex-Juvenile Justice chief contributed to her exit, records show",
+      "url": "https://www.texastribune.org/2026/11/25/texas-juvenile-justice-department-european-travel-shandra-carter/",
+      "publisher": "The Texas Tribune",
+      "date": "2026-11-25",
+      "category": "Texas",
+      "kind": "Reporting"
+    },
     {
       "title": "Texas Supreme Court dismisses challenge to abortion restrictions",
       "url": "https://www.texastribune.org/2026/11/23/texas-abortion-lawsuit-dismissal-heartbeat-act/",
@@ -134,14 +142,6 @@
       "publisher": "Texas Public Radio / The Texas Newsroom",
       "date": "2026-11-12",
       "url": "https://www.tpr.org/government-politics/2026-11-12/texas-top-courts-have-democrats-for-first-time-in-years-they-could-reshape-the-legal-system",
-      "category": "Texas",
-      "kind": "Reporting"
-    },
-    {
-      "title": "Paxton ends suit seeking to close FIEL Houston",
-      "publisher": "The Texas Tribune",
-      "date": "2026-11-10",
-      "url": "https://www.texastribune.org/2026/11/10/ken-paxton-attorney-general-fiel-immigration-lawsuit-houston/",
       "category": "Texas",
       "kind": "Reporting"
     },
@@ -368,35 +368,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
+      "checkedAt": "2026-11-25T13:31:48.862502+00:00",
       "success": true,
       "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
+      "checkedAt": "2026-11-25T13:31:48.862502+00:00",
       "success": true,
-      "items": 5
+      "items": 6
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
+      "checkedAt": "2026-11-25T13:31:48.862502+00:00",
       "success": true,
       "items": 9
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
+      "checkedAt": "2026-11-25T13:31:48.862502+00:00",
       "success": true,
       "items": 60
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-25T00:27:06.844166+00:00",
+      "checkedAt": "2026-11-25T13:31:48.862502+00:00",
       "success": true,
       "items": 5
     }
