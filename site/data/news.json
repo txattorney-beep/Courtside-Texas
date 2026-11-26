@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-25T23:18:46.620738+00:00",
+  "checkedAt": "2026-11-26T13:48:02.118858+00:00",
   "articles": [
     {
       "title": "Lavish European travel by Texas’ ex-Juvenile Justice chief contributed to her exit, records show",
@@ -170,6 +170,30 @@
       "kind": "Unpublished opinion"
     },
     {
+      "title": "25-30641 USA v. Woolridge",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-30641-CR0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-25",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "26-30355 Gonzalez v. Federal Bureau of Prisons",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/26/26-30355-CV0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-25",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
+      "title": "25-30201 Medco Energi v. Cantor",
+      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-30201-CV0.pdf",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "date": "2026-11-25",
+      "category": "Fifth Circuit",
+      "kind": "Published opinion"
+    },
+    {
       "title": "24-10386 State of Texas v. Blanche",
       "url": "https://www.ca5.uscourts.gov/opinions/pub/24/24-10386-CV1.pdf",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
@@ -214,30 +238,6 @@
       "url": "https://www.ca5.uscourts.gov/opinions/pub/24/24-30241-CR0.pdf",
       "publisher": "U.S. Court of Appeals for the Fifth Circuit",
       "date": "2026-11-19",
-      "category": "Fifth Circuit",
-      "kind": "Published opinion"
-    },
-    {
-      "title": "25-60198 Cuevas Machine v. Calgon Carbon",
-      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-60198-CV0.pdf",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-19",
-      "category": "Fifth Circuit",
-      "kind": "Published opinion"
-    },
-    {
-      "title": "25-30111 USA v. Keelen",
-      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-30111-CR0.pdf",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-17",
-      "category": "Fifth Circuit",
-      "kind": "Published opinion"
-    },
-    {
-      "title": "25-10824 M. v. Aledo",
-      "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-10824-CV1.pdf",
-      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
-      "date": "2026-11-16",
       "category": "Fifth Circuit",
       "kind": "Published opinion"
     },
@@ -368,35 +368,35 @@
     {
       "source": "Courthouse News Service",
       "feed": "https://www.courthousenews.com/feed/",
-      "checkedAt": "2026-11-25T23:18:46.620738+00:00",
+      "checkedAt": "2026-11-26T13:48:02.118858+00:00",
       "success": true,
       "items": 0
     },
     {
       "source": "The Texas Tribune",
       "feed": "https://feeds.texastribune.org/feeds/main/",
-      "checkedAt": "2026-11-25T23:18:46.620738+00:00",
+      "checkedAt": "2026-11-26T13:48:02.118858+00:00",
       "success": true,
-      "items": 5
+      "items": 4
     },
     {
       "source": "State Bar of Texas",
       "feed": "https://blog.texasbar.com/feed/",
-      "checkedAt": "2026-11-25T23:18:46.620738+00:00",
+      "checkedAt": "2026-11-26T13:48:02.118858+00:00",
       "success": true,
       "items": 9
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/opinions",
-      "checkedAt": "2026-11-25T23:18:46.620738+00:00",
+      "checkedAt": "2026-11-26T13:48:02.118858+00:00",
       "success": true,
       "items": 60
     },
     {
       "source": "U.S. Court of Appeals for the Fifth Circuit",
       "feed": "https://www.ca5.uscourts.gov/feeds/news",
-      "checkedAt": "2026-11-25T23:18:46.620738+00:00",
+      "checkedAt": "2026-11-26T13:48:02.118858+00:00",
       "success": true,
       "items": 5
     }
